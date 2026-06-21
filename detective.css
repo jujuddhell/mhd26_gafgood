@@ -297,6 +297,14 @@
   color: #d4a259;
 }
 
+.chief-text blockquoteint {
+  border-left: 4px solid #82a9c1;
+  padding-left: 14px;
+  margin: 0 0 20px 0;
+  font-style: italic;
+  color: #82a9c1;
+}
+
 .chief-links {
   margin-top: 30px;
   display: flex;

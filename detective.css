@@ -284,6 +284,7 @@
 .chief-full {
   width: 260px;
   float: right; /* это можно оставить */
+    border-radius: 12px;
   margin: 20px 0 20px 20px;
 }
 

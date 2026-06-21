@@ -297,17 +297,14 @@
   color: #d4a259;
 }
 
-blockquoteint {
-  display: block; /* обязательно! */
-}
-
-.chief-text blockquoteint {
+.chief-text blockquote.int {
   border-left: 4px solid #82a9c1;
   padding-left: 14px;
   margin: 0 0 20px 0;
   font-style: italic;
   color: #82a9c1;
 }
+
 
 
 

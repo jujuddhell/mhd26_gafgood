@@ -342,9 +342,10 @@ body.theme-magazine {
 
 .mag-science-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
+
 
 .science-card {
   background: rgba(255, 255, 255, 0.95);

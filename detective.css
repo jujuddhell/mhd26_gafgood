@@ -376,59 +376,56 @@
 
 /* === Досье === */
 
-/* ВЕРХНИЙ БЛОК: портрет + досье */
-.chief-top {
+.dossier {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: flex-start;
-  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
-.chief-portrait {
-  width: 220px;
-  height: auto;
-  border-radius: 12px;
+/* Левая колонка */
+.dossier-sidebar {
+  width: 260px;
   flex-shrink: 0;
 }
 
-.dossier {
-  flex: 1;
-  background: rgba(13, 27, 61, 0.4);
-  border-left: 4px solid #d4a259;
-  padding: 15px 20px;
-  border-radius: 8px;
+.dossier-portrait {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 20px;
 }
 
-.dossier ul {
+.dossier-info {
   list-style: none;
   padding: 0;
   margin: 0;
-  line-height: 1.6;
+  background: rgba(13, 27, 61, 0.4);
+  border-left: 4px solid #d4a259;
+  border-radius: 8px;
+  padding: 15px 18px;
+  line-height: 1.5;
 }
 
-.dossier li strong {
+.dossier-info li strong {
   color: #d4a259;
 }
 
-/* НИЖНИЙ БЛОК: текст + full-body */
-.chief-bottom {
-  position: relative;
+/* Правая колонка */
+.dossier-content {
+  flex: 1;
 }
 
-.chief-full {
-  width: 260px;
-  float: right;
-  border-radius: 16px;
-  overflow: hidden;
-  margin: 10px 0 20px 20px;
-}
-
-.chief-info,
-.chief-notes {
+.dossier-section {
   margin-bottom: 25px;
 }
 
-.chief-info blockquote {
+.dossier-section h2 {
+  margin-bottom: 10px;
+  color: #d4a259;
+}
+
+.dossier-section blockquote {
   border-left: 4px solid #d4a259;
   padding-left: 15px;
   margin: 0 0 20px 0;
@@ -436,12 +433,44 @@
   color: #d4a259;
 }
 
-.chief-notes ul {
+/* Фото в полный рост */
+.dossier-full {
+  width: 260px;
+  float: right;
+  border-radius: 12px;
+  margin: 10px 0 20px 20px;
+}
+
+/* Примечания */
+.dossier-notes {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.chief-notes li {
+.dossier-notes li {
   margin-bottom: 8px;
+}
+
+.chief-dossier {
+  flex: 1;
+  background: rgba(13, 27, 61, 0.4);
+  border-left: 4px solid #d4a259;
+  padding: 15px 20px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.chief-dossier ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chief-dossier li strong {
+  color: #d4a259;
+}
+
+.chief-bottom {
+  margin-top: 30px;
 }

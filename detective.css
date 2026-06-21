@@ -305,8 +305,10 @@
 }
 
 .bronze-link {
+  font-size: 12px;
   color: #d4a259;
   text-decoration: none;
+  text-decoration: underline;
 }
 
 .bronze-link:hover {
@@ -435,7 +437,7 @@
 
 .dossier-section blockquote.int {
   border-left: 4px solid #82a9c1;
-  padding-left: 14px;
+  padding-left: 13px;
   margin: 0 0 20px 0;
   font-style: italic;
   color: #82a9c1;

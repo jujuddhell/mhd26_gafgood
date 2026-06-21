@@ -452,25 +452,7 @@
   margin-bottom: 8px;
 }
 
-.chief-dossier {
-  flex: 1;
-  background: rgba(13, 27, 61, 0.4);
-  border-left: 4px solid #d4a259;
-  padding: 15px 20px;
-  border-radius: 8px;
-  line-height: 1.6;
-}
-
-.chief-dossier ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.chief-dossier li strong {
-  color: #d4a259;
-}
-
-.chief-bottom {
+.dossier-bottom {
   margin-top: 30px;
+  clear: both; /* чтобы нижний блок начинался под портретом */
 }

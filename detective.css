@@ -290,8 +290,8 @@
 }
 
 .dossier-caption {
-  font-size: 0.9rem;
-  color: #d4a259;
+  font-size: 0.7rem;
+  color: rgba(149, 182, 191, 0.783);
   margin: -10px 0 20px 0; /* чуть ближе к фото */
   text-align: right;      /* подпись справа — как в досье */
   max-width: 260px;       /* выравнивание под ширину фото */

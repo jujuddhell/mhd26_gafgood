@@ -109,18 +109,6 @@ p {
 
 /* === Зона гардероба (визуальная) === */
 
-
-
-/* === Анимация холста при взаимодействии === */
-
-.canvas-container {
-    transition: transform 0.2s ease;
-}
-
-.canvas-container:active {
-    transform: scale(1.01);
-}
-
 /* === Кнопки (если появятся) === */
 
 button {

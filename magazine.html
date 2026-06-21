@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Журнал «Задира»</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="magazine.css">
+</head>
+<body class="theme-magazine">
+  <header class="mag-header">
+    <div class="mag-logo-area">
+      <div class="mag-logo">ЗАДИРА</div>
+      <div class="mag-tagline">Криминальск. Совпадения. Личности.</div>
+    </div>
+    <nav class="mag-nav">
+      <a href="#feature">Главное</a>
+      <a href="#gossip">Сплетни</a>
+      <a href="#comics">Комиксы</a>
+      <a href="#science">Научные веяния</a>
+      <a href="#psyche">Мозгошмыги</a>
+      <a href="index.html">Вернуться в агентство</a>
+    </nav>
+  </header>
+
+  <main class="mag-main">
+    <!-- Главный выпуск недели -->
+    <section id="feature" class="mag-feature">
+      <div class="mag-feature-label">Выпуск недели</div>
+      <h1 class="mag-feature-title">
+        Почему в Криминальске совпадения случаются чаще по четвергам?
+      </h1>
+      <p class="mag-feature-lead">
+        Редакция агентства «Задира» расследует странную статистику: четверг снова стал днём
+        исчезающих зонтиков, внезапных признаний и загадочных звонков без ответа.
+      </p>
+      <div class="mag-feature-meta">
+        <span>Редактор: основательница агентства</span>
+        <span>Город: Криминальск</span>
+      </div>
+    </section>
+
+    <!-- Сетка рубрик -->
+    <section class="mag-rubrics">
+      <h2 class="mag-section-title">Рубрики номера</h2>
+      <div class="rubric-grid">
+        <article class="rubric-card">
+          <div class="rubric-label">Сплетни</div>
+          <h3>Сплетни и загадки Криминальска</h3>
+          <p>
+            Кто на самом деле живёт в доме без окон, почему фонтан шепчет по ночам
+            и откуда в парке берутся одинаковые перчатки?
+          </p>
+          <button class="mag-pill-btn" data-scroll="#gossip">Читать сплетни</button>
+
+        </article>
+
+        <article class="rubric-card">
+          <div class="rubric-label">Комиксы</div>
+          <h3>Комиксы агентства «Задира»</h3>
+          <p>
+            Мини‑истории о буднях основательницы агентства: странные клиенты, говорящие
+            улики и кофе, который всё знает.
+          </p>
+          <button class="mag-pill-btn" data-scroll="#comics">Открыть ленту</button>
+        </article>
+
+        <article class="rubric-card">
+          <div class="rubric-label">Псевдонаука</div>
+          <h3>Научные веяния</h3>
+          <p>
+            Криминальская парадоксология, нарглометр‑3000 и свежие исследования
+            совпадений в городской среде.
+          </p>
+          <button class="mag-pill-btn" data-scroll="#science">Смотреть исследования</button>
+        </article>
+
+        <article class="rubric-card">
+          <div class="rubric-label">Личность</div>
+          <h3>О мозгошмыгах, нарглах и гранях «я»</h3>
+          <p>
+            Иллюстрированные профили внутренних существ, которые шепчут, сомневаются,
+            подталкивают и мешают спать.
+          </p>
+          <button class="mag-pill-btn" data-scroll="#psyche">Познакомиться с ними</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Комикс-лента -->
+    <section id="comics" class="mag-comics">
+      <div class="mag-section-header">
+        <h2 class="mag-section-title">Комикс‑лента агентства</h2>
+        <span class="mag-section-note">мини‑комиксы, 2–3 кадра в линию</span>
+      </div>
+      <div class="comics-row">
+        <div class="comic-card">
+          <div class="comic-placeholder"></div>
+          <h3 class="comic-title">Дело о пропавшем кофе</h3>
+          <p class="comic-caption">
+            Кадр 1: основательница обнаруживает, что кофе исчез. Кадр 2: все улики ведут к… самому кофе.
+          </p>
+        </div>
+        <div class="comic-card">
+          <div class="comic-placeholder"></div>
+          <h3 class="comic-title">Совпадение №13</h3>
+          <p class="comic-caption">
+            Кадр 1: три клиента приходят с одной и той же фразой. Кадр 2: оказывается, это слоган новой рекламы.
+          </p>
+        </div>
+        <div class="comic-card">
+          <div class="comic-placeholder"></div>
+          <h3 class="comic-title">Говорящая улика</h3>
+          <p class="comic-caption">
+            Кадр 1: странная записка. Кадр 2: записка меняет текст каждый раз, когда её читают вслух.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Мини-новости Криминальска -->
+    <section id="gossip" class="mag-news">
+      <h2 class="mag-section-title">Мини‑новости и сплетни Криминальска</h2>
+      <div class="mag-news-grid">
+        <article class="news-item">
+          <h3>Урна, которая исчезает по расписанию</h3>
+          <p>
+            На перекрёстке улиц Парадоксальной и Логичной снова исчезла урна. Жители уверены:
+            она появляется только тем, кто готов выбросить старые привычки.
+          </p>
+        </article>
+        <article class="news-item">
+          <h3>Слишком громкие совпадения</h3>
+          <p>
+            Житель дома №7 пожаловался на соседей: «У них совпадения происходят слишком шумно».
+            Редакция выясняет, как именно звучит совпадение.
+          </p>
+        </article>
+        <article class="news-item">
+          <h3>Таинственный плащ у фонтана</h3>
+          <p>
+            Неизвестный в оранжевом плаще снова замечен у фонтана. По слухам, он ищет
+            потерянный мотив собственной жизни.
+          </p>
+        </article>
+        <article class="news-item">
+          <h3>Библиотечные нарглы</h3>
+          <p>
+            Нарглы замечены в городской библиотеке. По словам очевидцев, они «искали смысл»,
+            но ушли с пустыми руками и полными головами.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Научные веяния -->
+    <section id="science" class="mag-science">
+      <div class="mag-section-header">
+        <h2 class="mag-section-title">Научные веяния Криминальска</h2>
+        <span class="mag-section-note">фиктивный институт, реальные вопросы</span>
+      </div>
+      <div class="mag-science-grid">
+        <article class="science-card">
+          <h3>Парадоксология совпадений</h3>
+          <p>
+            Учёные Криминальского института парадоксологии доказали, что вероятность странного
+            события растёт пропорционально степени вашей усталости.
+          </p>
+          <p class="science-meta">Журнал «Задира», отдел наблюдений</p>
+        </article>
+        <article class="science-card">
+          <h3>Нарглометр‑3000</h3>
+          <p>
+            Новый прибор фиксирует эмоциональные всплески на расстоянии до 12 метров и
+            различает 7 типов внутреннего «а вдруг».
+          </p>
+          <p class="science-meta">Сертификация: «почти научно»</p>
+        </article>
+        <article class="science-card">
+          <h3>Мозгошмыги и недосып</h3>
+          <p>
+            Исследование показало: при недостатке сна мозгошмыги усиливаются на 43%, а
+            способность отличать совпадение от знака — падает вдвое.
+          </p>
+          <p class="science-meta">Рекомендация: спать, а не гуглить</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Мозгошмыги, нарглы и грани личности -->
+    <section id="psyche" class="mag-psyche">
+      <div class="mag-section-header">
+        <h2 class="mag-section-title">О мозгошмыгах, нарглах и остальных гранях личности</h2>
+        <span class="mag-section-note">фиктивные существа, очень реальные ощущения</span>
+      </div>
+      <div class="psyche-grid">
+        <article class="psyche-card">
+          <div class="psyche-tag">Мозгошмыг недели</div>
+          <h3>Переключатель</h3>
+          <p>
+            Способен менять настроение владельца каждые 7 минут. Любит недосказанность,
+            не любит чёткие планы.
+          </p>
+        </article>
+        <article class="psyche-card">
+          <div class="psyche-tag">Наргл‑наблюдение</div>
+          <h3>Сомневающийся</h3>
+          <p>
+            Редкий вид наргла, питающийся фразами «а вдруг» и «а если». Обитает в
+            мессенджерах и черновиках.
+          </p>
+        </article>
+        <article class="psyche-card">
+          <div class="psyche-tag">Грань личности</div>
+          <h3>Внутренний редактор</h3>
+          <p>
+            Исправляет даже мысли. Появляется, когда вы уже нажали «отправить»,
+            и шепчет: «можно было лучше».
+          </p>
+        </article>
+        <article class="psyche-card">
+          <div class="psyche-tag">Грань личности</div>
+          <h3>Следователь совпадений</h3>
+          <p>
+            Видит связи во всём: от номера автобуса до цвета неба. Иногда прав,
+            иногда просто устал.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mag-footer">
+    <div class="footer-column">
+      <h3>Редакция «Задиры»</h3>
+      <p>Основательница агентства и главред: [твоё имя/персонаж]</p>
+      <p>Город Криминальск, улица Парадоксальная, дом без совпадений.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Контакты</h3>
+      <p>Письма с загадками: mystery@zadira.mag</p>
+      <p>Жалобы на совпадения: coincidence@zadira.mag</p>
+    </div>
+    <div class="footer-column footer-notes">
+      <h3>Мелким шрифтом</h3>
+      <p>Все совпадения в журнале намеренны.</p>
+      <p>Мозгошмыги и нарглы — фиктивны, но ведут себя подозрительно реалистично.</p>
+    </div>
+  </footer>
+
+  <script src="interactions.js"></script>
+</body>
+</html>

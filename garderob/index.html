@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Модный приговор</title>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="utf-8"/>
+        <script src="fabric.min.js"></script>
+        <script src="jquery-3.1.1.min.js"></script>
+        
+    </head>
+    <body>
+<nav class="top-menu">
+    <div class="menu-inner">
+        <a href="../index.html" class="logo-link">← Вернуться в агентство</a>
+
+        <ul class="menu-links">
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../o-nas-dir.html">О нас</a></li>
+            <li><a href="../magazine.html">Журнал «Задира»</a></li>
+        </ul>
+    </div>
+</nav>
+
+   		<div class="wel">
+			<div class="case-randomizer">
+             <h3>Случайное дело</h3>
+             <button id="random-case-btn">Выдать дело</button>
+             <p id="random-case-text">Нажмите, чтобы получить задание.</p>
+            </div>
+
+            <script src="script.js"></script>
+
+
+          <div class="wel-text">
+    		 <h1>Дж.Л.ХдК выходит на дело!</h1>
+    		 <p>Может ли быть что-то лучше хорошего наряда? Правильно, несколько хороших нарядов!</p>
+    		 <p>В ваших руках весь гардероб Дж.Л.ХдК, вы можете творить и вытворять всё, чего пожелает ваша душа, а можете взять что-то из списка дел детектива на день.
+    		 </p>
+    		 <p class="note">(свой дизайн можно принести на трибуны известного вам детектива ;)</p>
+    	  </div>
+		</div>
+        <div id="can"><canvas id='c'>Обновите браузер</canvas></div>
+        
+        <script>
+        	var screen_width = document.getElementById('can').clientWidth - 30;
+			var canvas = new fabric.Canvas('c', {
+				width:screen_width,
+				height: 2500,
+				preserveObjectStacking: true
+			});
+
+			fabric.Image.fromURL('Juju.png', function(base) {
+				base.scale(0.33);
+            base.set({
+        left: 100,
+        top: 100,
+        selectable: false,
+        evented: false
+           });
+         canvas.add(base);
+		 canvas.sendToBack(base);
+		 canvas.on('mouse:down', function(e) {
+         if (e.target) {
+         canvas.bringToFront(e.target);
+         }
+});
+
+
+          });
+
+
+			var width_history=400;
+			var height_history=40;
+			var max_height=0;
+			for(i=0; i<40; i++) {
+				fabric.Image.fromURL('odejda/'+i+'.png', function(oImg) {
+					oImg.scale(0.33); 
+					img_wdt=oImg.getWidth();
+					img_hgt=oImg.getHeight();
+					if(max_height<img_hgt) max_height=img_hgt;
+
+					if(width_history+img_wdt>screen_width-10) {height_history+=max_height; max_height=0; width_history=400;
+					}
+					oImg.set('left', width_history).set('top', height_history);
+
+					width_history+=img_wdt;
+  					canvas.add(oImg);
+				});
+			}
+			
+
+			
+        </script>
+	
+  <footer class="site-footer">
+    <p>© Gafgood, личный шкафчик Дж. Л. ХдК</p>
+  </footer>
+    </body>
+</html>

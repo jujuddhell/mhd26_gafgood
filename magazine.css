@@ -1,0 +1,462 @@
+/* magazine.css — голубой, розовый, оранжевый, ярко */
+
+body.theme-magazine {
+  background: linear-gradient(135deg, #4fd1ff, #ff7ac4, #ffb347);
+  color: #1b1b1b;
+}
+
+.mag-header {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.mag-logo {
+  color: #ff3b8d;
+}
+
+.mag-nav .nav-link {
+  background: rgba(255, 255, 255, 0.8);
+  color: #1b1b1b;
+}
+
+.mag-nav .nav-link.active {
+  background: #ffb347;
+  color: #1b1b1b;
+  font-weight: 600;
+}
+
+.mag-hero {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.mag-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.mag-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.comic-placeholder {
+  width: 100%;
+  height: 180px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe0f0,
+    #ffe0f0 10px,
+    #ffd1a8 10px,
+    #ffd1a8 20px
+  );
+  border-radius: 12px;
+  border: 3px solid #ff7ac4;
+}
+
+/* Базовая тема уже есть в magazine.css:
+body.theme-magazine {
+  background: linear-gradient(135deg, #4fd1ff, #ff7ac4, #ffb347);
+  color: #1b1b1b;
+}
+.mag-header { background: rgba(255, 255, 255, 0.7); }
+.mag-logo { color: #ff3b8d; }
+*/
+
+/* Общая сетка и типографика */
+body.theme-magazine {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+.mag-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.mag-section-title {
+  font-size: 1.6rem;
+  margin: 0 0 12px;
+}
+
+.mag-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mag-section-note {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Шапка */
+.mag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.mag-logo-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mag-logo {
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  font-size: 1.4rem;
+}
+
+.mag-tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+.mag-nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mag-nav a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #1b1b1b;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 123, 196, 0.4);
+}
+
+.mag-nav a:hover {
+  background: #ff7ac4;
+  color: #ffffff;
+}
+
+/* Главный выпуск недели */
+.mag-feature {
+  margin-top: 24px;
+  margin-bottom: 32px;
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.mag-feature::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle at top right, rgba(255, 122, 196, 0.25), transparent 60%),
+              radial-gradient(circle at bottom left, rgba(79, 209, 255, 0.25), transparent 60%);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.mag-feature > * {
+  position: relative;
+  z-index: 1;
+}
+
+.mag-feature-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ff7ac4;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.mag-feature-title {
+  font-size: 1.8rem;
+  margin: 0 0 10px;
+}
+
+.mag-feature-lead {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.mag-feature-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* Рубрики */
+.mag-rubrics {
+  margin-bottom: 32px;
+}
+
+.rubric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.rubric-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  padding: 14px 14px 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 179, 71, 0.4);
+}
+
+.rubric-card h3 {
+  margin: 6px 0 8px;
+  font-size: 1.1rem;
+}
+
+.rubric-card p {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+.rubric-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #4fd1ff;
+  color: #0b1b2b;
+}
+
+.mag-pill-btn {
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: #ffb347;
+  color: #1b1b1b;
+}
+
+.mag-pill-btn:hover {
+  background: #ff7ac4;
+  color: #ffffff;
+}
+
+/* Комикс-лента */
+.mag-comics {
+  margin-bottom: 32px;
+}
+
+.comics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.comic-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 10px 10px 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  border: 2px solid #ff7ac4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comic-placeholder {
+  width: 100%;
+  height: 160px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe0f0,
+    #ffe0f0 10px,
+    #ffd1a8 10px,
+    #ffd1a8 20px
+  );
+  border-radius: 12px;
+  border: 3px solid #ff7ac4;
+}
+
+.comic-title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.comic-caption {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Мини-новости и сплетни */
+.mag-news {
+  margin-bottom: 32px;
+}
+
+.mag-news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.news-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px dashed rgba(79, 209, 255, 0.7);
+}
+
+.news-item h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.news-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Научные веяния */
+.mag-science {
+  margin-bottom: 32px;
+}
+
+.mag-science-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.science-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(79, 209, 255, 0.6);
+  position: relative;
+}
+
+.science-card::before {
+  content: "★";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1.1rem;
+  color: #ff7ac4;
+  opacity: 0.8;
+}
+
+.science-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.science-card p {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.science-meta {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Мозгошмыги, нарглы и грани личности */
+.mag-psyche {
+  margin-bottom: 36px;
+}
+
+.psyche-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.psyche-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 179, 71, 0.7);
+}
+
+.psyche-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #ff7ac4;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.psyche-card h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.psyche-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Подвал */
+.mag-footer {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 18px 24px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  font-size: 0.9rem;
+}
+
+.mag-footer h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.mag-footer p {
+  margin: 0 0 4px;
+}
+
+.footer-notes p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  .mag-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .mag-feature-title {
+    font-size: 1.4rem;
+  }
+
+  .mag-main {
+    padding-inline: 12px;
+  }
+}

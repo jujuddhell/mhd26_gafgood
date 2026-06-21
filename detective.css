@@ -297,17 +297,6 @@
   color: #d4a259;
 }
 
-.chief-text blockquote.int {
-  border-left: 4px solid #82a9c1;
-  padding-left: 14px;
-  margin: 0 0 20px 0;
-  font-style: italic;
-  color: #82a9c1;
-}
-
-
-
-
 .chief-links {
   margin-top: 30px;
   display: flex;
@@ -442,6 +431,14 @@
   margin: 0 0 20px 0;
   font-style: italic;
   color: #d4a259;
+}
+
+.dossier-section blockquote.int {
+  border-left: 4px solid #82a9c1;
+  padding-left: 14px;
+  margin: 0 0 20px 0;
+  font-style: italic;
+  color: #82a9c1;
 }
 
 /* Фото в полный рост */

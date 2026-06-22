@@ -116,6 +116,20 @@ const board = document.getElementById("puzzleBoard");
 
 let draggedElement = null;
 
+// --- ПЕРЕМЕШИВАЕМ ПАЗЛЫ СПРАВА ---
+const piecesContainer = document.querySelector(".puzzle-pieces");
+const piecesArray = Array.from(pieces);
+
+shuffleArray(piecesArray);
+piecesArray.forEach(p => piecesContainer.appendChild(p));
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
 pieces.forEach(piece => {
   piece.addEventListener("dragstart", dragStart);
 });
@@ -136,7 +150,7 @@ board.addEventListener("drop", (e) => {
   const x = e.clientX - rect.left;
   const y = e.clientY - rect.top;
 
-  const cellSize = 150;
+  const cellSize = 130;
 
   // вычисляем ближайшую ячейку
   const col = Math.floor(x / cellSize);

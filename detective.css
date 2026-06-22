@@ -70,19 +70,43 @@
 
 
 /* СПИСКИ ПРИНЦИПОВ */
+/* === ПЕРГАМЕНТ ДЛЯ ПРИНЦИПОВ === */
 .page-index .principles {
-  clear: both;
+  background: url('/assets/pergament-texture.jpg') center/cover no-repeat,
+              rgba(255, 244, 214, 0.85); /* мягкий бежевый фон */
+  padding: 30px 35px;
+  border-radius: 12px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  border: 2px solid rgba(120, 80, 40, 0.4);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(120, 80, 40, 0.3);
+
+  clear: both; /* чтобы пергамент начинался под табличкой */
 }
 
-.principles-list {
+/* Заголовок на пергаменте */
+.page-index .principles h2 {
+  color: #5a3b1e;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  margin-top: 0;
+}
+
+/* Список на пергаменте */
+.page-index .principles-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.principles-list li {
-  margin-bottom: 8px;
+.page-index .principles-list li {
+  margin-bottom: 10px;
   padding-left: 16px;
-  border-left: 2px solid #c08c40;
+  border-left: 3px solid #8a5a2f; /* более «пергаментный» цвет */
+  color: #3b2a1a;
+  font-weight: 500;
 }
 
 /* FAQ */

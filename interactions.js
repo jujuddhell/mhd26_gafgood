@@ -116,7 +116,6 @@ const board = document.getElementById("puzzleBoard");
 
 let draggedElement = null;
 
-// --- 1. Перетаскивание исходных деталей ---
 pieces.forEach(piece => {
   piece.addEventListener("dragstart", dragStart);
 });
@@ -126,40 +125,21 @@ function dragStart(e) {
   e.dataTransfer.setData("text/plain", "");
 }
 
-// --- 2. Разрешаем бросать в поле ---
 board.addEventListener("dragover", (e) => {
   e.preventDefault();
 });
 
-// --- 3. Обработка drop ---
 board.addEventListener("drop", (e) => {
   e.preventDefault();
 
-  const rect = board.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  const cellSize = 150; // размер одной детали
-
-  // вычисляем ближайшую ячейку
-  const col = Math.floor(x / cellSize);
-  const row = Math.floor(y / cellSize);
-
-  const left = col * cellSize;
-  const top = row * cellSize;
-
-  // если деталь уже в поле — просто перемещаем
+  // Если деталь уже в поле — просто перемещаем её в конец grid
   if (draggedElement.parentElement === board) {
-    draggedElement.style.left = left + "px";
-    draggedElement.style.top = top + "px";
+    board.appendChild(draggedElement);
     return;
   }
 
-  // иначе создаём новую
+  // Если деталь из боковой панели — переносим её в сетку
   const clone = draggedElement.cloneNode(true);
-  clone.style.position = "absolute";
-  clone.style.left = left + "px";
-  clone.style.top = top + "px";
   clone.draggable = true;
   clone.addEventListener("dragstart", dragStart);
 

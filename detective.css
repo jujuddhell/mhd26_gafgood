@@ -652,20 +652,15 @@
 
 /* Область для сборки */
 .puzzle-board {
-  width: 650px;
+  width: 600px;
   height: 450px;
   border: 2px dashed rgba(255, 179, 92, 0.5);
-  border-radius: 12px;
-  position: relative; /* ВАЖНО */
-  background: rgba(245, 198, 144, 0.548); /* светлее */
-  overflow: hidden;
+  background: rgba(245, 198, 144, 0.55);
   display: grid;
-  grid-template-columns: repeat(3, 150px);
-  grid-template-rows: repeat(4, 150px);
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(3, 150px);
   gap: 0;
-  position: relative;
 }
-
 
 
 /* Контейнер с деталями */
@@ -679,8 +674,8 @@
 
 /* Размер деталей */
 .puzzle-piece {
-  width: 100px;        /* фиксированный размер */
-  height: 100px;       /* квадрат */
+  width: 150px;        /* фиксированный размер */
+  height: 150px;       /* квадрат */
   object-fit: cover;   /* чтобы не растягивались */
   cursor: grab;
   border-radius: 0;

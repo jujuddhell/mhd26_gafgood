@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /*ПАЗЛЫ*/
+/* ПАЗЛЫ */
 const pieces = document.querySelectorAll(".puzzle-piece");
 const board = document.getElementById("puzzleBoard");
 
@@ -121,7 +121,7 @@ board.addEventListener("dragover", dragOver);
 board.addEventListener("drop", drop);
 
 function dragStart(e) {
-  e.dataTransfer.setData("piece", e.target.src);
+  e.dataTransfer.setData("piece-id", e.target.getAttribute("src"));
 }
 
 function dragOver(e) {
@@ -130,17 +130,18 @@ function dragOver(e) {
 
 function drop(e) {
   e.preventDefault();
-  const src = e.dataTransfer.getData("piece");
+  const src = e.dataTransfer.getData("piece-id");
 
   const img = document.createElement("img");
   img.src = src;
   img.classList.add("puzzle-piece");
   img.style.position = "absolute";
-  img.style.left = e.offsetX - 60 + "px";
-  img.style.top = e.offsetY - 60 + "px";
+  img.style.left = e.offsetX - 50 + "px";
+  img.style.top = e.offsetY - 50 + "px";
 
   board.appendChild(img);
 }
+
 
 });
 

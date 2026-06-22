@@ -62,7 +62,7 @@
 
 /* Табличка, которая обтекается текстом */
 .page-index .shelf-float {
-  width: 300px;
+  width: 400px;
   float: left;
   margin: 0 20px 20px 0; /* отступы справа и снизу */
   display: block;
@@ -477,3 +477,43 @@
   margin-top: 30px;
   clear: both; /* чтобы нижний блок начинался под портретом */
 }
+
+/* === КОНТАКТЫ === */
+.contacts {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(192, 140, 64, 0.4);
+}
+
+.contacts h2 {
+  color: var(--bronze, #d4a259);
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px rgba(212, 162, 89, 0.4);
+}
+
+.contacts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-item {
+  background: rgba(5, 8, 20, 0.7);
+  border: 1px solid rgba(192, 140, 64, 0.4);
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-width: 220px;
+  flex: 1;
+}
+
+.contact-item h3 {
+  margin-top: 0;
+  color: var(--bronze, #d4a259);
+  margin-bottom: 8px;
+}
+
+.contact-item p {
+  margin: 0;
+  color: #e8e4d8;
+}
+

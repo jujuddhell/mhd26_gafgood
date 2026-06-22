@@ -1,9 +1,9 @@
 // interactions.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  // FAQ раскрытие
-  const faqQuestions = document.querySelectorAll(".faq-question");
 
+  /* === FAQ раскрытие === */
+  const faqQuestions = document.querySelectorAll(".faq-question");
   faqQuestions.forEach((btn) => {
     btn.addEventListener("click", () => {
       const answer = btn.nextElementSibling;
@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Подсветка активной ссылки навигации по URL
+
+  /* === Подсветка активной ссылки навигации === */
   const navLinks = document.querySelectorAll(".main-nav .nav-link, .mag-nav .nav-link");
   const current = window.location.pathname.split("/").pop();
-
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
     if (href === current) {
@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- ПЕРЕКЛЮЧЕНИЕ БЛОКОВ "ИСТОРИЯ" / "ГЛАВНАЯ ЗДЕСЬ" ---
+
+  /* === Переключение блоков "История" / "Главная здесь" === */
   const subnavButtons = document.querySelectorAll(".subnav button");
   const sections = document.querySelectorAll(".history-block, .chief-block");
 
@@ -31,89 +32,83 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const target = btn.dataset.target;
 
-      // скрываем все блоки
       sections.forEach((sec) => sec.classList.add("hidden"));
 
-      // показываем нужный
       const targetSection = document.querySelector(target);
       if (targetSection) targetSection.classList.remove("hidden");
     });
   });
 
-  // --- РАСКРЫТИЕ КАРТОЧЕК УСЛУГ ---
-  const cards = document.querySelectorAll(".service-card");
 
+  /* === Раскрытие карточек услуг === */
+  const cards = document.querySelectorAll(".service-card");
   cards.forEach(card => {
     card.addEventListener("click", () => {
       card.classList.toggle("open");
     });
   });
 
-// --- ПЛАВНАЯ ПРОКРУТКА (улучшенная) ---
-function smoothScrollTo(target) {
-  const element = document.querySelector(target);
-  if (!element) return;
 
-  const start = window.scrollY;
-  const end = element.getBoundingClientRect().top + window.scrollY - 20;
-  const duration = 700; // скорость (можно 900 для ещё мягче)
-  let startTime = null;
+  /* === Плавная прокрутка === */
+  function smoothScrollTo(target) {
+    const element = document.querySelector(target);
+    if (!element) return;
 
-  function animation(currentTime) {
-    if (!startTime) startTime = currentTime;
-    const progress = currentTime - startTime;
+    const start = window.scrollY;
+    const end = element.getBoundingClientRect().top + window.scrollY - 20;
+    const duration = 700;
+    let startTime = null;
 
-    // easeInOutCubic — мягкая, кинематографичная кривая
-    const ease = (t) =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    function animation(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const progress = currentTime - startTime;
 
-    const timeFraction = Math.min(progress / duration, 1);
-    const eased = ease(timeFraction);
+      const ease = (t) =>
+        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-    window.scrollTo(0, start + (end - start) * eased);
+      const timeFraction = Math.min(progress / duration, 1);
+      const eased = ease(timeFraction);
 
-    if (progress < duration) requestAnimationFrame(animation);
+      window.scrollTo(0, start + (end - start) * eased);
+
+      if (progress < duration) requestAnimationFrame(animation);
+    }
+
+    requestAnimationFrame(animation);
   }
 
-  requestAnimationFrame(animation);
-}
-
-// --- ОБРАБОТЧИКИ КЛИКОВ ---
-document.querySelectorAll("[data-scroll]").forEach((el) => {
-  el.addEventListener("click", () => {
-    smoothScrollTo(el.dataset.scroll);
+  document.querySelectorAll("[data-scroll]").forEach((el) => {
+    el.addEventListener("click", () => {
+      smoothScrollTo(el.dataset.scroll);
+    });
   });
-});
 
-/*Для меню прокрутка*/
-document.querySelectorAll(".mag-nav a").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    const targetId = link.getAttribute("href");
+  document.querySelectorAll(".mag-nav a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href");
+      if (!targetId.startsWith("#")) return;
 
-    if (!targetId.startsWith("#")) return;
-
-    e.preventDefault();
-    smoothScrollTo(targetId);
+      e.preventDefault();
+      smoothScrollTo(targetId);
+    });
   });
-});
 
 
-// Увеличение картинок по клику
-document.addEventListener("click", function(e) {
-  if (e.target.classList.contains("zoomable")) {
-    const overlay = document.createElement("div");
-    overlay.className = "zoom-overlay";
-    overlay.innerHTML = `<img src="${e.target.src}">`;
-    document.body.appendChild(overlay);
+  /* === Увеличение картинок по клику === */
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("zoomable")) {
+      const overlay = document.createElement("div");
+      overlay.className = "zoom-overlay";
+      overlay.innerHTML = `<img src="${e.target.src}">`;
+      document.body.appendChild(overlay);
 
-    overlay.style.display = "flex";
+      overlay.style.display = "flex";
 
-    overlay.addEventListener("click", () => overlay.remove());
-  }
-});
-
-
+      overlay.addEventListener("click", () => overlay.remove());
+    }
+  });
 
 });
+
 
 

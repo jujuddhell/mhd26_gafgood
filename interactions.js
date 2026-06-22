@@ -98,6 +98,21 @@ document.querySelectorAll(".mag-nav a").forEach((link) => {
 });
 
 
+// Увеличение картинок по клику
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("zoomable")) {
+    const overlay = document.createElement("div");
+    overlay.className = "zoom-overlay";
+    overlay.innerHTML = `<img src="${e.target.src}">`;
+    document.body.appendChild(overlay);
+
+    overlay.style.display = "flex";
+
+    overlay.addEventListener("click", () => overlay.remove());
+  }
+});
+
+
 });
 
 

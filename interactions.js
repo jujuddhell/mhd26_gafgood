@@ -109,38 +109,52 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-/* ПАЗЛЫ */
+/* === ПАЗЛЫ === */
+
 const pieces = document.querySelectorAll(".puzzle-piece");
 const board = document.getElementById("puzzleBoard");
 
+let draggedElement = null;
+
+// --- 1. Перетаскивание исходных деталей ---
 pieces.forEach(piece => {
   piece.addEventListener("dragstart", dragStart);
 });
 
-board.addEventListener("dragover", dragOver);
-board.addEventListener("drop", drop);
-
 function dragStart(e) {
-  e.dataTransfer.setData("piece-id", e.target.getAttribute("src"));
+  draggedElement = e.target;
+  e.dataTransfer.setData("text/plain", "");
 }
 
-function dragOver(e) {
+// --- 2. Разрешаем бросать в поле ---
+board.addEventListener("dragover", (e) => {
   e.preventDefault();
-}
+});
 
-function drop(e) {
+// --- 3. Обработка drop ---
+board.addEventListener("drop", (e) => {
   e.preventDefault();
-  const src = e.dataTransfer.getData("piece-id");
 
-  const img = document.createElement("img");
-  img.src = src;
-  img.classList.add("puzzle-piece");
-  img.style.position = "absolute";
-  img.style.left = e.offsetX - 50 + "px";
-  img.style.top = e.offsetY - 50 + "px";
+  // Если деталь уже в поле — просто перемещаем
+  if (draggedElement.parentElement === board) {
+    draggedElement.style.left = e.offsetX - draggedElement.width / 2 + "px";
+    draggedElement.style.top = e.offsetY - draggedElement.height / 2 + "px";
+    return;
+  }
 
-  board.appendChild(img);
-}
+  // Если деталь из боковой панели — создаём новую
+  const clone = draggedElement.cloneNode(true);
+  clone.style.position = "absolute";
+  clone.style.left = e.offsetX - clone.width / 2 + "px";
+  clone.style.top = e.offsetY - clone.height / 2 + "px";
+  clone.draggable = true;
+
+  // Делаем её тоже перетаскиваемой
+  clone.addEventListener("dragstart", dragStart);
+
+  board.appendChild(clone);
+});
+
 
 
 });

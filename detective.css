@@ -645,7 +645,7 @@
 
 .puzzle-wrapper {
   display: flex;
-  gap: 10px;
+  gap: 0px;
   justify-content: center;
   margin-top: 20px;
 }
@@ -665,10 +665,10 @@
 
 /* Контейнер с деталями */
 .puzzle-pieces {
-  width: 300px;
+  width: 350px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
 }
 

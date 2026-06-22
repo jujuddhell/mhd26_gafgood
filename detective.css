@@ -670,7 +670,7 @@
 
 /* Область для сборки */
 .puzzle-board {
-  width: 525px;   /* 130 * 4 */
+  width: 520px;   /* 130 * 4 */
   height: 390px;  /* 130 * 3 */
   border: 2px dashed rgba(255, 179, 92, 0.5);
   background: rgba(245, 198, 144, 0.55);

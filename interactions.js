@@ -92,6 +92,46 @@ document.addEventListener("DOMContentLoaded", () => {
       smoothScrollTo(targetId);
     });
   });
+  // --- МОДАЛЬНОЕ ОКНО ДЛЯ ОБЛОЖКИ ---
+const cover = document.getElementById("featureCover");
+const modal = document.getElementById("coverModal");
+const modalImg = document.getElementById("coverModalImg");
+const closeBtn = document.getElementById("coverClose");
+
+if (cover) {
+  cover.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = cover.src;
+  });
+}
+
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+}
+
+modal?.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+// --- МОДАЛКА ПОДПИСКИ ---
+const subscriptionModal = document.getElementById("subscriptionModal");
+const subscriptionClose = document.getElementById("subscriptionClose");
+
+document.querySelectorAll("[data-open-subscription]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    subscriptionModal.style.display = "flex";
+  });
+});
+
+subscriptionClose?.addEventListener("click", () => {
+  subscriptionModal.style.display = "none";
+});
+
+subscriptionModal?.addEventListener("click", (e) => {
+  if (e.target === subscriptionModal) subscriptionModal.style.display = "none";
+});
 
 
   /* === Увеличение картинок по клику === */

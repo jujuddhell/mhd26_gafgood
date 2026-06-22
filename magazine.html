@@ -22,6 +22,21 @@
   <main class="mag-main">
     <!-- Главный выпуск недели -->
     <section id="feature" class="mag-feature">
+      <div class="feature-cover-wrapper">
+  <img 
+    src="assets/cover-week.jpg" 
+    alt="Обложка выпуска" 
+    class="feature-cover"
+    id="featureCover"
+  >
+      </div>
+
+    <!-- Модальное окно для обложки -->
+    <div class="cover-modal" id="coverModal">
+      <span class="cover-close" id="coverClose">&times;</span>
+      <img class="cover-modal-img" id="coverModalImg">
+    </div>
+
       <div class="mag-feature-label">Выпуск недели</div>
       <h1 class="mag-feature-title">
         Мэрия в сотрудничестве с Д.Д. объявила конкурс "Сыщица года"!
@@ -81,6 +96,7 @@
           <p>
             Весь город поделился на цвета и код, кажется, знает только "Красный". Как правит радуга, о чём молчат краски и какой вы цвет по зодиакальному таро.
           </p>
+          <button class="read-article-btn" data-open-subscription>Читать статью</button>
         </article>
         <article class="news-item">
           <h3>Защитники чести на пороге</h3>
@@ -185,6 +201,27 @@
       <p>Мозгошмыги и нарглы — воображаемы, но ведут себя подозрительно реалистично.</p>
     </div>
   </footer>
+
+  <div class="subscription-modal" id="subscriptionModal">
+  <div class="subscription-window">
+    <span class="subscription-close" id="subscriptionClose">&times;</span>
+
+    <div class="subscription-icon">💰</div>
+
+    <h3 class="subscription-title">Оплатите подписку</h3>
+    <p class="subscription-text">
+      Эта статья доступна только подписчикам журнала «Задира».
+    </p>
+
+    <a 
+      class="subscription-pay-btn"
+      href="https://hogsmeade.dhog.org/ucp.php?i=-hogsmeade-bank-ucp-main_module&mode=personal_transactions&to=717&amount=100500&comment=%D0%B7%D0%B0%20%D0%9F%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%BA%D0%B0%20%D0%97%D0%B0%D0%B4%D0%B8%D1%80%D0%B0"
+      target="_blank"
+    >
+      Заплатить 100500 галлеонов
+    </a>
+  </div>
+</div>
 
   <script src="interactions.js"></script>
 </body>

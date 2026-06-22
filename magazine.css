@@ -461,3 +461,133 @@ body.theme-magazine {
     padding-inline: 12px;
   }
 }
+
+/* Обложка выпуска */
+.feature-cover-wrapper {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.feature-cover {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.feature-cover:hover {
+  transform: scale(1.03);
+}
+
+/* Модальное окно */
+.cover-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+.cover-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 42px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+/* Кнопка "Читать статью" */
+.read-article-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #ff7ac4;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+}
+
+.read-article-btn:hover {
+  background: #ffb347;
+  color: #1b1b1b;
+}
+
+/* Модалка подписки */
+.subscription-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscription-window {
+  background: #fff;
+  padding: 26px 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.subscription-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #333;
+}
+
+.subscription-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.subscription-title {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.subscription-text {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.subscription-pay-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #ffb347;
+  color: #1b1b1b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.subscription-pay-btn:hover {
+  background: #ff7ac4;
+  color: #fff;
+}

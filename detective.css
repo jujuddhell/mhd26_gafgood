@@ -609,3 +609,29 @@
   background: rgba(255, 179, 92, 0.15);
   box-shadow: 0 0 10px rgba(255, 179, 92, 0.35);
 }
+
+/* === Кнопка-ссылка для кейсов === */
+
+.case-button {
+  display: inline-block;
+  margin: 0 16px 12px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+
+  color: #ffb35c;
+  border: 1px solid rgba(255, 179, 92, 0.45);
+  background: rgba(255, 179, 92, 0.08);
+
+  backdrop-filter: blur(4px);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.case-button:hover {
+  background: rgba(255, 179, 92, 0.18);
+  box-shadow: 0 0 14px rgba(255, 179, 92, 0.45);
+  transform: translateY(-3px);
+}

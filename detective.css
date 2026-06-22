@@ -653,6 +653,7 @@
   transform: translateY(-3px);
 }
 
+
 /* === ПАЗЛЫ === */
 
 .puzzle-section {
@@ -681,6 +682,11 @@
   overflow: hidden;
 }
 
+.puzzle-boards-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 
 /* Контейнер с деталями */

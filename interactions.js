@@ -109,19 +109,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-/* === ПАЗЛЫ — абсолютное позиционирование + магнитная сетка === */
+/* === ПАЗЛЫ — несколько полей + общий набор === */
 
-const pieces = document.querySelectorAll(".puzzle-piece");
-const board = document.getElementById("puzzleBoard");
+const boards = document.querySelectorAll(".puzzle-board");
+const piecesContainer = document.querySelector(".puzzle-pieces");
+const pieces = Array.from(document.querySelectorAll(".puzzle-piece"));
 
 let draggedElement = null;
 
-// --- ПЕРЕМЕШИВАЕМ ПАЗЛЫ СПРАВА ---
-const piecesContainer = document.querySelector(".puzzle-pieces");
-const piecesArray = Array.from(pieces);
-
-shuffleArray(piecesArray);
-piecesArray.forEach(p => piecesContainer.appendChild(p));
+// --- ПЕРЕМЕШИВАЕМ ДЕТАЛИ ---
+shuffleArray(pieces);
+pieces.forEach(p => piecesContainer.appendChild(p));
 
 function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -130,6 +128,7 @@ function shuffleArray(arr) {
   }
 }
 
+// --- DRAG START ---
 pieces.forEach(piece => {
   piece.addEventListener("dragstart", dragStart);
 });
@@ -139,42 +138,48 @@ function dragStart(e) {
   e.dataTransfer.setData("text/plain", "");
 }
 
-board.addEventListener("dragover", (e) => {
-  e.preventDefault();
+// --- DRAG OVER ДЛЯ ВСЕХ ПОЛЕЙ ---
+boards.forEach(board => {
+  board.addEventListener("dragover", e => e.preventDefault());
 });
 
-board.addEventListener("drop", (e) => {
-  e.preventDefault();
+// --- DROP НА ЛЮБОЕ ПОЛЕ ---
+boards.forEach(board => {
+  board.addEventListener("drop", e => {
+    e.preventDefault();
 
-  const rect = board.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+    const rect = board.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-  const cellSize = 130;
+    const cellSize = draggedElement.offsetWidth;
 
-  // вычисляем ближайшую ячейку
-  const col = Math.floor(x / cellSize);
-  const row = Math.floor(y / cellSize);
+    const col = Math.floor(x / cellSize);
+    const row = Math.floor(y / cellSize);
 
-  const left = col * cellSize;
-  const top = row * cellSize;
+    const left = col * cellSize;
+    const top = row * cellSize;
 
-  // если деталь уже в поле — просто перемещаем
-  if (draggedElement.parentElement === board) {
+    draggedElement.style.position = "absolute";
     draggedElement.style.left = left + "px";
     draggedElement.style.top = top + "px";
-    return;
-  }
 
-  // иначе перемещаем деталь из набора в поле
-  draggedElement.style.position = "absolute";
-  draggedElement.style.left = left + "px";
-  draggedElement.style.top = top + "px";
-
-  board.appendChild(draggedElement);
+    board.appendChild(draggedElement);
+  });
 });
 
+// --- ВОЗВРАТ В ОБЩИЙ НАБОР ---
+piecesContainer.addEventListener("dragover", e => e.preventDefault());
 
+piecesContainer.addEventListener("drop", e => {
+  e.preventDefault();
+
+  draggedElement.style.position = "relative";
+  draggedElement.style.left = "0px";
+  draggedElement.style.top = "0px";
+
+  piecesContainer.appendChild(draggedElement);
+});
 
 });
 

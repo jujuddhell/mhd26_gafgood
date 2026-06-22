@@ -108,6 +108,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+  /*ПАЗЛЫ*/
+const pieces = document.querySelectorAll(".puzzle-piece");
+const board = document.getElementById("puzzleBoard");
+
+pieces.forEach(piece => {
+  piece.addEventListener("dragstart", dragStart);
+});
+
+board.addEventListener("dragover", dragOver);
+board.addEventListener("drop", drop);
+
+function dragStart(e) {
+  e.dataTransfer.setData("piece", e.target.src);
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function drop(e) {
+  e.preventDefault();
+  const src = e.dataTransfer.getData("piece");
+
+  const img = document.createElement("img");
+  img.src = src;
+  img.classList.add("puzzle-piece");
+  img.style.position = "absolute";
+  img.style.left = e.offsetX - 60 + "px";
+  img.style.top = e.offsetY - 60 + "px";
+
+  board.appendChild(img);
+}
+
 });
 
 

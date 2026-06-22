@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <base href="/mhd26_gafgood/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Gafgood — детективное агентство</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detective.css">
+</head>
+<body class="theme-detective page-index">
+  <header class="site-header">
+    <div class="logo">Gafgood</div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Главная</a>
+      <a href="o-nas-dir.html" class="nav-link">О нас</a>
+      <a href="garderob/index.html" class="nav-link">Шкаф</a>
+      <a href="kase.html" class="nav-link active">Кейсы</a>
+      <a href="magazine.html" class="nav-link magazine-link">Журнал «Задира»</a>
+    </nav>
+  </header>
+
+  <main class="content">
+
+  <section class="case-hero">
+     <h1>Дело RED CARNIVAL</h1>
+     <p>Кровавый клан, оставляющий за собой маски и загадки.</p>
+  </section>
+
+  <section class="case-intro">
+     <img src="assets/red-mask.png" class="case-mask" alt="">
+     <div class="case-text">
+       <h2>Вводное досье</h2>
+       <p>RED CARNIVAL — подпольный клан, появляющийся только накануне исчезновений...</p>
+     </div>
+  </section>
+
+  <section class="puzzle-section">
+   <h2>Собери улики</h2>
+
+ <div class="puzzle-wrapper">
+
+    <!-- Область для сборки -->
+    <div class="puzzle-board" id="puzzleBoard"></div>
+
+    <!-- Разбросанные детали -->
+    <div class="puzzle-pieces">
+      <img src="absent/1.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/2.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/3.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/4.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/5.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/6.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/7.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/8.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/9.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/10.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/11.jpg" class="puzzle-piece" draggable="true">
+      <img src="absent/12.jpg" class="puzzle-piece" draggable="true">
+    </div>
+
+  </div>
+</section>
+
+
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© Gafgood, детективное агентство и редакция журнала «Задира»</p>
+  </footer>
+
+  <script src="interactions.js"></script>
+</body>
+</html>

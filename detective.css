@@ -70,44 +70,72 @@
 
 
 /* СПИСКИ ПРИНЦИПОВ */
-/* === ПЕРГАМЕНТ ДЛЯ ПРИНЦИПОВ === */
-.page-index .principles {
-  background: url('/assets/pergament-texture.jpg') center/cover no-repeat,
-              rgba(255, 244, 214, 0.85); /* мягкий бежевый фон */
-  padding: 30px 35px;
-  border-radius: 12px;
+/* ПЕРГАМЕНТ ДЛЯ БЛОКА ПРИНЦИПОВ */
+.principles {
+  background: radial-gradient(circle at top left, #fff7da 0%, #f3e0b8 40%, #e0c89a 100%);
+  padding: 28px 32px;
+  border-radius: 14px;
   margin-top: 40px;
   margin-bottom: 40px;
 
-  border: 2px solid rgba(120, 80, 40, 0.4);
+  border: 2px solid rgba(120, 80, 40, 0.5);
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.4),
-    inset 0 0 20px rgba(120, 80, 40, 0.3);
+    0 6px 16px rgba(0, 0, 0, 0.45),
+    inset 0 0 18px rgba(120, 80, 40, 0.35);
 
-  clear: both; /* чтобы пергамент начинался под табличкой */
+  position: relative;
+  overflow: hidden;
+  clear: both; /* чтобы блок начинался под табличкой */
 }
 
-/* Заголовок на пергаменте */
-.page-index .principles h2 {
-  color: #5a3b1e;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+.principles::before,
+.principles::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0 0, rgba(0, 0, 0, 0.18), transparent 55%),
+    radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.16), transparent 55%),
+    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.18), transparent 55%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.principles::after {
+  mix-blend-mode: multiply;
+}
+
+/* Заголовок и подпись на пергаменте */
+.principles h2 {
   margin-top: 0;
+  margin-bottom: 6px;
+  color: #4b3017;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.principles p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #5a3b1e;
+  font-style: italic;
 }
 
 /* Список на пергаменте */
-.page-index .principles-list {
+.principles-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.page-index .principles-list li {
-  margin-bottom: 10px;
+.principles-list li {
+  margin-bottom: 8px;
   padding-left: 16px;
-  border-left: 3px solid #8a5a2f; /* более «пергаментный» цвет */
-  color: #3b2a1a;
+  border-left: 3px solid #8a5a2f;
+  color: #3b2414;
   font-weight: 500;
 }
+
 
 /* FAQ */
 .faq-item {

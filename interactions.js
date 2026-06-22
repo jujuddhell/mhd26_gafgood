@@ -135,27 +135,36 @@ board.addEventListener("dragover", (e) => {
 board.addEventListener("drop", (e) => {
   e.preventDefault();
 
-  // Если деталь уже в поле — просто перемещаем
+  const rect = board.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const cellSize = 150; // размер одной детали
+
+  // вычисляем ближайшую ячейку
+  const col = Math.floor(x / cellSize);
+  const row = Math.floor(y / cellSize);
+
+  const left = col * cellSize;
+  const top = row * cellSize;
+
+  // если деталь уже в поле — просто перемещаем
   if (draggedElement.parentElement === board) {
-    draggedElement.style.left = e.offsetX - draggedElement.width / 2 + "px";
-    draggedElement.style.top = e.offsetY - draggedElement.height / 2 + "px";
+    draggedElement.style.left = left + "px";
+    draggedElement.style.top = top + "px";
     return;
   }
 
-  // Если деталь из боковой панели — создаём новую
+  // иначе создаём новую
   const clone = draggedElement.cloneNode(true);
   clone.style.position = "absolute";
-  clone.style.left = e.offsetX - clone.width / 2 + "px";
-  clone.style.top = e.offsetY - clone.height / 2 + "px";
+  clone.style.left = left + "px";
+  clone.style.top = top + "px";
   clone.draggable = true;
-
-  // Делаем её тоже перетаскиваемой
   clone.addEventListener("dragstart", dragStart);
 
   board.appendChild(clone);
 });
-
-
 
 });
 

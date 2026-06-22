@@ -657,9 +657,16 @@
   border: 2px dashed rgba(255, 179, 92, 0.5);
   border-radius: 12px;
   position: relative; /* ВАЖНО */
-  background: rgba(255,255,255,0.05);
+  background: rgba(245, 198, 144, 0.548); /* светлее */
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(4, 150px);
+  gap: 0;
+  position: relative;
 }
+
+
 
 /* Контейнер с деталями */
 .puzzle-pieces {
@@ -676,8 +683,14 @@
   height: 100px;       /* квадрат */
   object-fit: cover;   /* чтобы не растягивались */
   cursor: grab;
-  border-radius: 6px;
+  border-radius: 0;
   transition: transform .2s;
+}
+
+.puzzle-piece:hover {
+  outline: 3px solid #ffb35caf;
+  outline-offset: 2px;
+  z-index: 10;
 }
 
 .puzzle-piece:active {

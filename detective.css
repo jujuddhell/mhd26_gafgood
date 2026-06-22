@@ -674,13 +674,10 @@
   height: 390px;
   border: 2px dashed rgba(255, 179, 92, 0.5);
   background: rgba(245, 198, 144, 0.55);
-  display: grid;
-  grid-template-columns: repeat(4, 150px);
-  grid-template-rows: repeat(3, 150px);
-  gap: 0;
-  position: relative; /* ВАЖНО */
+  position: relative;
   overflow: hidden;
 }
+
 
 .puzzle-boards-column {
   display: flex;

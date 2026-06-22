@@ -703,7 +703,7 @@
   cursor: grab;
   border-radius: 0;
   transition: transform .2s;
-  position: relative; /* В наборе */
+  position: absolute; /* В наборе */
 }
 
 .puzzle-piece:hover {

@@ -195,6 +195,7 @@ boards.forEach(board => {
     const cellSize = draggedElement.getBoundingClientRect().width;
 
 
+
     const col = Math.floor(x / cellSize);
     const row = Math.floor(y / cellSize);
 

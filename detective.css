@@ -652,34 +652,38 @@
 
 /* Область для сборки */
 .puzzle-board {
-  width: 600px;
-  height: 450px;
+  width: 520px;
+  height: 390px;
   border: 2px dashed rgba(255, 179, 92, 0.5);
   background: rgba(245, 198, 144, 0.55);
   display: grid;
   grid-template-columns: repeat(4, 150px);
   grid-template-rows: repeat(3, 150px);
   gap: 0;
+  position: relative; /* ВАЖНО */
+  overflow: hidden;
 }
+
 
 
 /* Контейнер с деталями */
 .puzzle-pieces {
-  width: 350px;
+  width: 420px; /* было 300px — теперь влезает 3 детали */
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
   justify-content: center;
 }
 
 /* Размер деталей */
 .puzzle-piece {
-  width: 150px;        /* фиксированный размер */
-  height: 150px;       /* квадрат */
+  width: 130px;        /* фиксированный размер */
+  height: 130px;       /* квадрат */
   object-fit: cover;   /* чтобы не растягивались */
   cursor: grab;
   border-radius: 0;
   transition: transform .2s;
+  position: relative; /* В наборе */
 }
 
 .puzzle-piece:hover {

@@ -687,10 +687,9 @@
 }
 
 .puzzle-piece:hover {
-  outline: 3px solid #ffb35caf;
-  outline-offset: 2px;
-  z-index: 10;
+  outline: none;
 }
+
 
 .puzzle-piece:active {
   cursor: grabbing;

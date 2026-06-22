@@ -70,71 +70,30 @@
 
 
 /* СПИСКИ ПРИНЦИПОВ */
-/* ПЕРГАМЕНТ ДЛЯ БЛОКА ПРИНЦИПОВ */
-.principles {
-  background: radial-gradient(circle at top left, #fff7da 0%, #f3e0b8 40%, #e0c89a 100%);
-  padding: 28px 32px;
-  border-radius: 14px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-
-  border: 2px solid rgba(120, 80, 40, 0.5);
-  box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.45),
-    inset 0 0 18px rgba(120, 80, 40, 0.35);
-
-  position: relative;
-  overflow: hidden;
-  clear: both; /* чтобы блок начинался под табличкой */
+.page-index .principles {
+  clear: both;
 }
 
-.principles::before,
-.principles::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 0 0, rgba(0, 0, 0, 0.18), transparent 55%),
-    radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.16), transparent 55%),
-    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.16), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.18), transparent 55%);
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-.principles::after {
-  mix-blend-mode: multiply;
-}
-
-/* Заголовок и подпись на пергаменте */
-.principles h2 {
-  margin-top: 0;
-  margin-bottom: 6px;
-  color: #4b3017;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-}
-
-.principles p {
-  margin-top: 0;
-  margin-bottom: 16px;
-  color: #5a3b1e;
-  font-style: italic;
-}
-
-/* Список на пергаменте */
 .principles-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .principles-list li {
   margin-bottom: 8px;
   padding-left: 16px;
-  border-left: 3px solid #8a5a2f;
-  color: #3b2414;
-  font-weight: 500;
+  border-left: 2px solid #c08c40;
 }
+
+/* Картинка справа от принципов */
+.principles-notebook {
+  width: 260px;          /* можешь менять размер */
+  float: right;          /* ставим справа */
+  margin: 0 0 20px 20px; /* отступ слева и снизу */
+  border-radius: 10px;   /* чтобы выглядело аккуратно */
+  display: block;
+}
+
 
 
 /* FAQ */

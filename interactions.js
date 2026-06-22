@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-/* === ПАЗЛЫ === */
+/* === ПАЗЛЫ — абсолютное позиционирование + магнитная сетка === */
 
 const pieces = document.querySelectorAll(".puzzle-piece");
 const board = document.getElementById("puzzleBoard");
@@ -132,19 +132,34 @@ board.addEventListener("dragover", (e) => {
 board.addEventListener("drop", (e) => {
   e.preventDefault();
 
-  // Если деталь уже в поле — просто перемещаем её в конец grid
+  const rect = board.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const cellSize = 150;
+
+  // вычисляем ближайшую ячейку
+  const col = Math.floor(x / cellSize);
+  const row = Math.floor(y / cellSize);
+
+  const left = col * cellSize;
+  const top = row * cellSize;
+
+  // если деталь уже в поле — просто перемещаем
   if (draggedElement.parentElement === board) {
-    board.appendChild(draggedElement);
+    draggedElement.style.left = left + "px";
+    draggedElement.style.top = top + "px";
     return;
   }
 
-  // Если деталь из боковой панели — переносим её в сетку
-  const clone = draggedElement.cloneNode(true);
-  clone.draggable = true;
-  clone.addEventListener("dragstart", dragStart);
+  // иначе перемещаем деталь из набора в поле
+  draggedElement.style.position = "absolute";
+  draggedElement.style.left = left + "px";
+  draggedElement.style.top = top + "px";
 
-  board.appendChild(clone);
+  board.appendChild(draggedElement);
 });
+
 
 });
 

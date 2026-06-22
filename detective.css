@@ -690,7 +690,7 @@
   width: 420px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0;              /* ВАЖНО — НИКАКИХ GAP */
   justify-content: center;
 }
 
@@ -702,11 +702,11 @@
   cursor: grab;
   border-radius: 0;
   transition: transform .2s;
-  position: relative; /* В наборе — relative */
+  position: relative; /* В наборе */
 }
 
 .puzzle-piece.in-board {
-  position: absolute; /* В поле — absolute */
+  position: absolute; /* В поле */
 }
 
 .puzzle-piece:active {

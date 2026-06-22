@@ -192,7 +192,7 @@ boards.forEach(board => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const cellSize = draggedElement.getBoundingClientRect().width;
+    const cellSize = 130;  /* ВОТ ОНО — фиксируем размер */
 
     const col = Math.floor(x / cellSize);
     const row = Math.floor(y / cellSize);
@@ -215,13 +215,11 @@ piecesContainer.addEventListener("drop", e => {
   e.preventDefault();
 
   draggedElement.classList.remove("in-board");
-  draggedElement.style.position = "relative";
   draggedElement.style.left = "0px";
   draggedElement.style.top = "0px";
 
   piecesContainer.appendChild(draggedElement);
 });
-
 
 });
 

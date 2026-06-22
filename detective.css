@@ -610,6 +610,15 @@
   box-shadow: 0 0 10px rgba(255, 179, 92, 0.35);
 }
 
+/* Статус дела */
+.case-status {
+  margin: 4px 16px 0;
+  font-size: 13px;
+  opacity: 0.6;
+  color: #e8e4d8; /* светлый, но не яркий */
+}
+
+
 /* === Кнопка-ссылка для кейсов === */
 
 .case-button {

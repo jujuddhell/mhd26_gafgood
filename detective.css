@@ -663,32 +663,31 @@
 
 .puzzle-wrapper {
   display: flex;
-  gap: 0px;
+  gap: 40px;
   justify-content: center;
   margin-top: 20px;
 }
 
 /* Область для сборки */
 .puzzle-board {
-  width: 520px;
-  height: 390px;
+  width: 520px;   /* 130 * 4 */
+  height: 390px;  /* 130 * 3 */
   border: 2px dashed rgba(255, 179, 92, 0.5);
   background: rgba(245, 198, 144, 0.55);
   position: relative;
   overflow: hidden;
 }
 
-
+/* Колонка с несколькими полями */
 .puzzle-boards-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-
 /* Контейнер с деталями */
 .puzzle-pieces {
-  width: 420px; /* было 300px — теперь влезает 3 детали */
+  width: 420px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -697,19 +696,18 @@
 
 /* Размер деталей */
 .puzzle-piece {
-  width: 130px;        /* фиксированный размер */
-  height: 130px;       /* квадрат */
-  object-fit: cover;   /* чтобы не растягивались */
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
   cursor: grab;
   border-radius: 0;
   transition: transform .2s;
-  position: absolute; /* В наборе */
+  position: relative; /* В наборе — relative */
 }
 
-.puzzle-piece:hover {
-  outline: none;
+.puzzle-piece.in-board {
+  position: absolute; /* В поле — absolute */
 }
-
 
 .puzzle-piece:active {
   cursor: grabbing;

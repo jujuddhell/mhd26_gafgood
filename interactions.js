@@ -194,15 +194,13 @@ boards.forEach(board => {
 
     const cellSize = draggedElement.getBoundingClientRect().width;
 
-
-
     const col = Math.floor(x / cellSize);
     const row = Math.floor(y / cellSize);
 
     const left = col * cellSize;
     const top = row * cellSize;
 
-    draggedElement.style.position = "absolute";
+    draggedElement.classList.add("in-board");
     draggedElement.style.left = left + "px";
     draggedElement.style.top = top + "px";
 
@@ -216,12 +214,14 @@ piecesContainer.addEventListener("dragover", e => e.preventDefault());
 piecesContainer.addEventListener("drop", e => {
   e.preventDefault();
 
+  draggedElement.classList.remove("in-board");
   draggedElement.style.position = "relative";
   draggedElement.style.left = "0px";
   draggedElement.style.top = "0px";
 
   piecesContainer.appendChild(draggedElement);
 });
+
 
 });
 

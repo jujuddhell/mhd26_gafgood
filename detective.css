@@ -645,14 +645,14 @@
 
 .puzzle-wrapper {
   display: flex;
-  gap: 40px;
+  gap: 10px;
   justify-content: center;
   margin-top: 20px;
 }
 
 /* Область для сборки */
 .puzzle-board {
-  width: 450px;
+  width: 650px;
   height: 450px;
   border: 2px dashed rgba(255, 179, 92, 0.5);
   border-radius: 12px;

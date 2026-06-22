@@ -405,7 +405,7 @@ body.theme-magazine {
   letter-spacing: 0.12em;
   padding: 3px 8px;
   border-radius: 999px;
-  background: #ff7ac4;
+  background: #4fd1ff;
   color: #ffffff;
   margin-bottom: 6px;
 }
@@ -463,23 +463,48 @@ body.theme-magazine {
 }
 
 /* Обложка выпуска */
+/* Контейнер: обложка слева, текст справа */
 .feature-cover-wrapper {
-  margin-top: 14px;
-  text-align: center;
+  float: left;                 /* ставим слева */
+  margin-right: 16px;          /* отступ справа */
+  margin-bottom: 8px;          /* небольшой отступ снизу */
 }
 
+/* Размер обложки */
 .feature-cover {
-  width: 100%;
-  max-width: 360px;
-  border-radius: 14px;
+  width: 140px;                /* сделай больше/меньше по желанию */
+  height: auto;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
 }
 
 .feature-cover:hover {
   transform: scale(1.03);
 }
+
+/* Чтобы текст красиво обтекал картинку */
+.mag-feature::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  .feature-cover-wrapper {
+    float: none;
+    margin: 0 auto 12px;
+    text-align: center;
+  }
+
+  .feature-cover {
+    width: 60%;
+    max-width: 220px;
+  }
+}
+
 
 /* Модальное окно */
 .cover-modal {
@@ -580,7 +605,7 @@ body.theme-magazine {
   display: inline-block;
   padding: 10px 16px;
   border-radius: 999px;
-  background: #ffb347;
+  background: #4fd1ff;
   color: #1b1b1b;
   font-weight: 600;
   text-decoration: none;

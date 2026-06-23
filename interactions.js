@@ -192,7 +192,7 @@ boards.forEach(board => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const cellSize = 130;  /* ВОТ ОНО — фиксируем размер */
+    const cellSize = 131;  /* ВОТ ОНО — фиксируем размер */
 
     const col = Math.floor(x / cellSize);
     const row = Math.floor(y / cellSize);

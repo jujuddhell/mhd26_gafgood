@@ -690,7 +690,7 @@
   width: 420px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10;              /* ВАЖНО — НИКАКИХ GAP */
+  gap: 0;              /* ВАЖНО — НИКАКИХ GAP */
   justify-content: center;
 }
 
@@ -711,5 +711,5 @@
 
 .puzzle-piece:active {
   cursor: grabbing;
-  transform: scale(1);
+  transform: scale(1.05);
 }

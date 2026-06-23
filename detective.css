@@ -671,7 +671,7 @@
 /* Область для сборки */
 .puzzle-board {
   width: 520px;   /* 130 * 4 */
-  height: 390px;  /* 130 * 3 */
+  height: 345px;  /* 130 * 3 */
   border: 2px dashed rgba(255, 179, 92, 0.5);
   background: rgba(245, 198, 144, 0.55);
   position: relative;
@@ -697,7 +697,7 @@
 /* Размер деталей */
 .puzzle-piece {
   width: 130px;
-  height: 130px;
+  height: 115px;
   object-fit: cover;
   cursor: grab;
   border-radius: 0;

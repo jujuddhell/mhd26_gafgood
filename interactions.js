@@ -192,13 +192,14 @@ boards.forEach(board => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const cellSize = 130;  /* ВОТ ОНО — фиксируем размер */
+    const cellWidth = 130;   // ширина детали
+    const cellHeight = 115;  // высота детали
 
-    const col = Math.floor(x / cellSize);
-    const row = Math.floor(y / cellSize);
+    const col = Math.floor(x / cellWidth);
+    const row = Math.floor(y / cellHeight);
 
-    const left = col * cellSize;
-    const top = row * cellSize;
+    const left = col * cellWidth;
+    const top = row * cellHeight;
 
     draggedElement.classList.add("in-board");
     draggedElement.style.left = left + "px";

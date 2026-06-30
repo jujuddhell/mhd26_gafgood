@@ -222,6 +222,15 @@ piecesContainer.addEventListener("drop", e => {
   piecesContainer.appendChild(draggedElement);
 });
 
+  const letter = document.getElementById("blueLetter");
+  const cover = letter.querySelector(".letter-cover");
+  const opened = letter.querySelector(".letter-opened");
+
+  cover.addEventListener("click", () => {
+    cover.style.display = "none";
+    opened.style.display = "block";
+  });
+
 });
 
 

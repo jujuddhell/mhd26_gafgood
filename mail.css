@@ -1,0 +1,119 @@
+/* Контент */
+.mail-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.mail-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(255, 179, 92, 0.4);
+}
+
+/* Почтовый ящик */
+.mailbox {
+  background: rgba(10, 17, 36, 0.55);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 179, 92, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.mailbox-img {
+  width: 260px;
+  margin-bottom: 25px;
+}
+
+/* Внутренние элементы */
+.mail-items {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Письмо */
+.letter {
+  width: 260px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.letter-cover {
+  background: #1e3fae;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(60, 120, 255, 0.45);
+  text-align: center;
+}
+
+.letter-cover img {
+  width: 180px;
+}
+
+.letter-cover p {
+  margin-top: 10px;
+  color: #e8f0ff;
+}
+
+/* Открытое письмо */
+.letter-opened {
+  display: none;
+  background: linear-gradient(135deg, #3a6cff, #1e3fae);
+  padding: 20px;
+  border-radius: 16px;
+  color: #e8f0ff;
+  box-shadow: 0 0 25px rgba(80, 140, 255, 0.55);
+}
+
+.letter-opened h2 {
+  margin-top: 0;
+}
+
+.letter-text {
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.letter-mag-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.letter-mag-link:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Журнал */
+.magazine-item {
+  text-align: center;
+}
+
+.magazine-cover {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(255, 179, 92, 0.35);
+}
+
+.magazine-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 179, 92, 0.25);
+  border-radius: 10px;
+  color: #ffb35c;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.magazine-link:hover {
+  background: rgba(255, 179, 92, 0.35);
+}

@@ -69,12 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const letter = document.getElementById("blueLetter");
-  const openBtn = document.getElementById("openLetterBtn");
-  const opened = letter.querySelector(".letter-opened");
+/* === Открытие письма === */
+const openLetterBtn = document.getElementById("openLetterBtn");
+const letterModal = document.getElementById("letterModal");
+const closeLetterBtn = document.getElementById("closeLetterBtn");
 
-  openBtn.addEventListener("click", () => {
-    opened.classList.remove("hidden");
-    openBtn.style.display = "none";
-  });
+openLetterBtn.addEventListener("click", () => {
+  letterModal.classList.remove("hidden");
+});
+
+closeLetterBtn.addEventListener("click", () => {
+  letterModal.classList.add("hidden");
+});
+
+/* Закрытие по клику вне окна */
+letterModal.addEventListener("click", (e) => {
+  if (e.target === letterModal) {
+    letterModal.classList.add("hidden");
+  }
+});
+
 });

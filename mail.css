@@ -138,3 +138,77 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+
+/* Модальное окно */
+.letter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Окно письма */
+.letter-window {
+  width: 700px;
+  padding: 30px;
+  background: url("assets/paper.jpg") center/cover no-repeat;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* Иконка */
+.letter-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+/* Плеер */
+.letter-audio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Текстовое поле */
+.letter-text-box {
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Текст */
+.letter-text {
+  color: #3b2f1b;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Кнопка закрытия */
+.letter-close-btn {
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.letter-close-btn:hover {
+  background: rgba(0,0,0,0.6);
+}

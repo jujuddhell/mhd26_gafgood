@@ -34,20 +34,9 @@
 
       <div class="bronze-box">
         <div id="blueLetter" class="mail-item">
-        <img src="assets/icon-list.png" class="mail-img">
-
-       <button id="openLetterBtn" class="btn-small-under">
-          Открыть письмо
-       </button>
-
-  <div class="letter-opened hidden">
-    <h2>Ваше письмо</h2>
-    <audio controls>
-      <source src="assets/letter-voice.mp3" type="audio/mpeg">
-    </audio>
-    <p class="letter-text">Дорогая Ульяна…</p>
-  </div>
-</div>
+           <img src="assets/icon-list.png" class="mail-list">
+           <button id="openLetterBtn" class="btn-small-under">Открыть письмо</button>
+        </div>
 
 
          <div class="mail-item">
@@ -60,6 +49,31 @@
     </div>
   </div>
 
+<!-- МОДУЛЬ ПИСЬМА -->
+<div id="letterModal" class="letter-modal hidden">
+
+  <div class="letter-window">
+
+    <img src="assets/icon-message.png" class="letter-icon">
+
+    <audio controls class="letter-audio">
+      <source src="assets/dpfhss.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="letter-text-box">
+      <p class="letter-text">
+        Здесь будет длинный текст письма.  
+        Он может быть очень длинным, поэтому блок прокручивается вниз.  
+        Ты можешь вставить сюда любую историю, запись, послание, что угодно.  
+        Текст будет красиво отображаться на пергаменте.
+      </p>
+    </div>
+
+    <button id="closeLetterBtn" class="letter-close-btn">Закрыть</button>
+
+  </div>
+
+</div>
 
 
 </body>

@@ -4,68 +4,48 @@
   <meta charset="UTF-8">
   <title>Почтовый ящик</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="detective.css">
   <link rel="stylesheet" href="mail.css">
+  <script defer src="mail.js"></script>
 </head>
 
-<body class="theme-detective">
+<body>
 
-  <header class="site-header">
-    <div class="logo">Décalé</div>
-    <nav class="main-nav">
-      <a href="index.html" class="nav-link">Агентство</a>
-      <a href="magazine.html" class="nav-link">Задира</a>
-      <a href="mail.html" class="nav-link active">Почта</a>
-    </nav>
-  </header>
+  <!-- ЭКРАН 1: Почтовый ящик + кнопка -->
+  <div id="startScreen" class="screen">
+    <img src="assets/icon-mail.png" class="mail-icon">
+    <button id="openMailboxBtn" class="btn-main">Открыть почтовый ящик</button>
+  </div>
 
-  <main class="mail-content">
+  <!-- ЭКРАН 2: Проверка "не Alohomora" -->
+  <div id="quizScreen" class="screen hidden">
+    <div class="quiz-box">
+      <h2>Докажите, что вы не Alohomora</h2>
+      <p id="quizQuestion" class="quiz-question"></p>
 
-    <h1 class="mail-title">Ваш почтовый ящик</h1>
+      <div id="quizAnswers" class="quiz-answers"></div>
 
-    <div class="mailbox">
-      <img src="assets/mailbox.png" alt="Почтовый ящик" class="mailbox-img">
-
-      <div class="mail-items">
-
-        <!-- Синее письмо -->
-        <div class="letter blue-letter" id="blueLetter">
-          <div class="letter-cover">
-            <img src="assets/blue-envelope.png" alt="Синий конверт">
-            <p>Открыть письмо</p>
-          </div>
-
-          <div class="letter-opened">
-            <h2>Озвученное письмо</h2>
-
-            <audio controls>
-              <source src="assets/letter-voice.mp3" type="audio/mpeg">
-            </audio>
-
-            <p class="letter-text">
-              Дорогая Ульяна,<br>
-              Это спокойное озвученное письмо пришло из отдела магической корреспонденции…
-            </p>
-
-            <a href="magazine.html" class="letter-mag-link">
-              Новый выпуск «Задиры»
-            </a>
-          </div>
-        </div>
-
-        <!-- Журнал -->
-        <div class="magazine-item">
-          <img src="assets/zadira-cover.png" alt="Журнал Задира" class="magazine-cover">
-          <a href="magazine.html" class="magazine-link">Открыть журнал</a>
-        </div>
-
-      </div>
+      <p class="quiz-errors">Ошибок: <span id="errorCount">0</span></p>
     </div>
+  </div>
 
-  </main>
+  <!-- ЭКРАН 3: Основная страница -->
+  <div id="mailScreen" class="screen hidden">
+    <div class="mail-container">
 
-  <script src="interactions.js"></script>
+      <div class="bronze-box">
+        <div class="mail-item">
+          <img src="assets/icon-list.png" class="mail-img">
+          <button class="btn-main" id="openLetterBtn">Открыть письмо</button>
+        </div>
+
+        <div class="mail-item">
+          <img src="assets/cover-week.png" class="mail-img">
+          <a href="magazine.html" class="btn-main">Забрать выпуск</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>

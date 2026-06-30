@@ -33,10 +33,22 @@
     <div class="mail-container">
 
       <div class="bronze-box">
-         <div class="mail-item">
-         <img src="assets/icon-list.png" class="mail-list">
-         <button class="btn-small-under">Открыть письмо</button>
-         </div>
+        <div id="blueLetter" class="mail-item">
+        <img src="assets/icon-list.png" class="mail-img">
+
+       <button id="openLetterBtn" class="btn-small-under">
+          Открыть письмо
+       </button>
+
+  <div class="letter-opened hidden">
+    <h2>Ваше письмо</h2>
+    <audio controls>
+      <source src="assets/letter-voice.mp3" type="audio/mpeg">
+    </audio>
+    <p class="letter-text">Дорогая Ульяна…</p>
+  </div>
+</div>
+
 
          <div class="mail-item">
          <img src="assets/cover-week.png" class="mail-magazine">
@@ -47,6 +59,8 @@
 
     </div>
   </div>
+
+
 
 </body>
 </html>

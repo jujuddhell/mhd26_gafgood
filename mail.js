@@ -69,4 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const letter = document.getElementById("blueLetter");
+  const openBtn = document.getElementById("openLetterBtn");
+  const opened = letter.querySelector(".letter-opened");
+
+  openBtn.addEventListener("click", () => {
+    opened.classList.remove("hidden");
+    openBtn.style.display = "none";
+  });
 });

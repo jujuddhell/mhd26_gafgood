@@ -127,9 +127,14 @@ body {
   text-align: center; /* центрирует кнопку под картинкой */
 }
 
-.mail-img {
+.mail-magazine {
   width: 180px;
   display: block;
   margin: 0 auto;
 }
 
+.mail-list {
+  width: 368px;
+  display: block;
+  margin: 0 auto;
+}

@@ -20,6 +20,32 @@ body {
 }
 
 /* Кнопка */
+
+.mail-img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-small {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-small:hover {
+  background: rgba(255,255,255,0.28);
+}
+
+
 .btn-main {
   background: #3a6cff;
   border: none;

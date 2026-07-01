@@ -160,8 +160,7 @@ body {
 
 /* Окно письма */
 .letter-window {
-  width: 900px;
-  height: 500px;
+  width: 700px;
   padding: 30px;
   background: url("assets/paper.jpg") center/cover no-repeat;
   border-radius: 20px;
@@ -172,7 +171,7 @@ body {
 /* Иконка */
 .letter-icon {
   width: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Плеер */

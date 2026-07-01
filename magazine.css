@@ -6,6 +6,26 @@ body.theme-magazine {
 }
 
 .mag-header {
+  position: relative;
+  z-index: 5000; /* выше всех секций */
+}
+
+.mag-nav {
+  position: relative;
+  z-index: 5001; /* ещё выше */
+}
+
+.dropdown {
+  position: relative;
+  z-index: 6000; /* контейнер меню */
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 7000; /* само меню */
+}
+
+.mag-header {
   background: rgba(255, 255, 255, 0.7);
 }
 

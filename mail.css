@@ -161,7 +161,7 @@ body {
 /* Окно письма */
 .letter-window {
   width: 900px;
-  height: 700px;
+  height: 500px;
   padding: 30px;
   background: url("assets/paper.jpg") center/cover no-repeat;
   border-radius: 20px;

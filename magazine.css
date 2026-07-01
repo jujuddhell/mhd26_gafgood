@@ -617,12 +617,27 @@ body.theme-magazine {
   color: #fff;
 }
 
-
 /* Контейнер dropdown */
 .dropdown {
   position: relative;
-  display: inline-block;
+  z-index: 1000; /* поднимаем весь блок меню */
 }
+
+/* Выпадающее меню */
+.dropdown-menu {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 10px 0;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  z-index: 2000; /* поверх всего */
+}
+
 
 /* Кнопка */
 .dropdown-btn {
@@ -641,20 +656,6 @@ body.theme-magazine {
   color: #fff;
 }
 
-/* Выпадающее меню */
-.dropdown-menu {
-  position: absolute;
-  top: 38px;
-  left: 0;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 10px 0;
-  min-width: 180px;
-  display: none; /* скрыто по умолчанию */
-  flex-direction: column;
-  z-index: 999;
-}
 
 /* Ссылки внутри меню */
 .dropdown-menu a {

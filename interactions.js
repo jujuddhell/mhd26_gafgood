@@ -223,6 +223,7 @@ piecesContainer.addEventListener("drop", e => {
 });
 
 // --- Dropdown по клику ---
+const dropdown = document.querySelector(".dropdown");
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 
@@ -232,11 +233,13 @@ if (dropdownBtn && dropdownMenu) {
     dropdownMenu.classList.toggle("open");
   });
 
-  document.addEventListener("click", () => {
-    dropdownMenu.classList.remove("open");
+  // закрытие при клике вне меню
+  document.addEventListener("click", (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdownMenu.classList.remove("open");
+    }
   });
 }
-
 
 
 document.querySelectorAll('.subnav button').forEach(btn => {

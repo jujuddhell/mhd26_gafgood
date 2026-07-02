@@ -226,18 +226,18 @@ piecesContainer.addEventListener("drop", e => {
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 
-if (dropdownBtn) {
+if (dropdownBtn && dropdownMenu) {
   dropdownBtn.addEventListener("click", (e) => {
     e.stopPropagation();
-    dropdownMenu.style.display =
-      dropdownMenu.style.display === "flex" ? "none" : "flex";
+    dropdownMenu.classList.toggle("open");
   });
 
   // закрытие при клике вне меню
   document.addEventListener("click", () => {
-    dropdownMenu.style.display = "none";
+    dropdownMenu.classList.remove("open");
   });
 }
+
 
 document.querySelectorAll('.subnav button').forEach(btn => {
   btn.addEventListener('click', () => {

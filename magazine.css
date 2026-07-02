@@ -15,14 +15,17 @@ body.theme-magazine {
   z-index: 5001; /* ещё выше */
 }
 
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.open {
+  display: flex;
+}
+
 .dropdown {
   position: relative;
   z-index: 6000; /* контейнер меню */
-}
-
-.dropdown-menu {
-  position: absolute;
-  z-index: 7000; /* само меню */
 }
 
 .mag-header {

@@ -756,3 +756,20 @@
 .text-table td[contenteditable="true"] {
   background: rgba(255, 255, 255, 0.1);
 }
+
+.vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.inner-names {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.inner-names td {
+  border: 1px solid rgba(255, 179, 92, 0.4);
+  padding: 4px;
+  text-align: center;
+}

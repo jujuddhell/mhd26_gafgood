@@ -725,6 +725,30 @@
   backdrop-filter: blur(6px);
 }
 
+.alibi-text {
+  text-align: justify;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.alibi-rules {
+  text-align: left;
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.alibi-note {
+  margin-top: 25px;
+  padding: 15px 20px;
+  background: rgba(255, 179, 92, 0.12); /* мягкий золотистый оттенок */
+  border-left: 4px solid #d4a259;       /* акцентная полоса слева */
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e8e4d8;
+}
+
+
 .logic-table {
   width: 100%;
   border-collapse: collapse;

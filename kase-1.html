@@ -44,6 +44,15 @@
   </div>
 </section>
 
+  <nav class="subnav">
+  <button data-target="#puzzlesSection">Рассмотреть улики</button>
+  <button data-target="#alibiSection">Изучить алиби</button>
+</nav>
+
+<section id="puzzlesSection" class="puzzles-block hidden">
+  <!-- здесь твой блок с пазлами -->
+
+  <div id="puzzlesSection" class="hidden">
   <h2>Собери улики</h2>
 
   <div class="puzzle-wrapper">
@@ -124,6 +133,139 @@
     </div>
 
   </div>
+ </div>
+
+ </section>
+
+<section id="alibiSection" class="alibi-block hidden">
+  <!-- здесь твой блок с логической загадкой -->
+<div id="alibiSection" class="hidden">
+
+  <h2>Алиби группировки RC</h2>
+
+<p class="alibi-text">
+Все пять подозреваемых — мистер Грин, мисс Уайт, мисс Пинк, мисс Голди, мисс Минт —
+сегодня опоздали на работу по не зависящим от них причинам. Их коллеги сообщили мне
+кое-какую информацию. Сможете ли вы определить, какое алиби (место и причина опоздания)
+выбрал себе каждый из подозреваемых и на какое количество времени опоздал каждый из них?
+Ниже приведены все показания источников.
+</p>
+
+<ol class="alibi-rules">
+  <li>Мистер Грин опоздал на работу не на 40 минут.</li>
+  <li>Мисс Уайт была в магазине. Та, кого видели в библиотеке (это были не мисс Пинк и не мистер Грин) пришла позже на полчаса.</li>
+  <li>Подозреваемый, попавший под ливень при выходе из школы, опоздал сильнее, чем тот, которого задержал в пути ураган.</li>
+  <li>Опоздание мисс Голд было на 20 минут больше, чем у того, у кого не сработал будильник (и кто опоздал не на 20 минут). Тем не менее мисс Голд опоздала не так сильно, как тот, кто посещал театр.</li>
+  <li>Тот, кто оправдал своё опоздание срочной встречей, опоздал на 10 минут больше, чем тот, кому пришлось долго разбираться с каминной сетью.</li>
+</ol>
+
+<p class="alibi-note">Примечание: отчёт отправлять в виде заполненных таблиц.</p>
+
+<h3>Таблица 1 — отметки</h3>
+
+<table class="logic-table marks-table">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Место работы</th>
+      <th>Причина</th>
+      <th>Опоздание</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Грин</td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+    </tr>
+    <tr>
+      <td>Уайт</td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+    </tr>
+    <tr>
+      <td>Пинк</td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+    </tr>
+    <tr>
+      <td>Голди</td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+    </tr>
+    <tr>
+      <td>Минт</td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+      <td class="mark-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Таблица 2 — текстовые ответы</h3>
+
+<table class="logic-table text-table">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Место работы</th>
+      <th>Причина</th>
+      <th>Опоздание</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Грин</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Уайт</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Пинк</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Голди</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+    <tr>
+      <td>Минт</td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+      <td contenteditable="true"></td>
+    </tr>
+  </tbody>
+</table>
+
+<button id="showAnswerBtn">Узнать правильный ответ</button>
+
+<div id="alibiAnswer" class="hidden alibi-answer">
+  Голд — офис — каминная сеть — 50 минут;<br>
+  Пинк — школа — ливень — 40 минут;<br>
+  Грин — театр — важная встреча — 60 минут;<br>
+  Уайт — магазин — ураган — 20 минут;<br>
+  Минт — библиотека — будильник — 30 минут.
+</div>
+
+</div> 
+</section><!-- конец alibiSection -->
+
 
 </section>
 

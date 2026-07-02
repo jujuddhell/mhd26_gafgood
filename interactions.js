@@ -222,6 +222,61 @@ piecesContainer.addEventListener("drop", e => {
   piecesContainer.appendChild(draggedElement);
 });
 
+// --- Dropdown по клику ---
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownMenu = document.querySelector(".dropdown-menu");
+
+if (dropdownBtn) {
+  dropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownMenu.style.display =
+      dropdownMenu.style.display === "flex" ? "none" : "flex";
+  });
+
+  // закрытие при клике вне меню
+  document.addEventListener("click", () => {
+    dropdownMenu.style.display = "none";
+  });
+}
+
+document.querySelectorAll('.subnav button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-target');
+
+    // скрываем все разделы
+    document.querySelectorAll('.puzzles-block, .alibi-block')
+      .forEach(sec => sec.classList.add('hidden'));
+
+    // показываем нужный
+    document.querySelector(target).classList.remove('hidden');
+  });
+});
+
+
+
+// === Отметки в таблице №1 ===
+document.querySelectorAll(".mark-cell").forEach(cell => {
+  cell.addEventListener("click", () => {
+    if (!cell.classList.contains("red") && !cell.classList.contains("blue")) {
+      cell.classList.add("red");
+    } else if (cell.classList.contains("red")) {
+      cell.classList.remove("red");
+      cell.classList.add("blue");
+    } else {
+      cell.classList.remove("blue");
+    }
+  });
+});
+
+// === Показ правильного ответа ===
+const showAnswerBtn = document.getElementById("showAnswerBtn");
+const alibiAnswer = document.getElementById("alibiAnswer");
+
+showAnswerBtn.addEventListener("click", () => {
+  alibiAnswer.classList.toggle("hidden");
+});
+
+
 });
 
 

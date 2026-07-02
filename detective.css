@@ -713,3 +713,50 @@
   cursor: grabbing;
   transform: scale(1.05);
 }
+
+.hidden {
+  display: none;
+}
+
+/*АЛИБИ-ЗАГАДКА*/
+
+#alibiSection {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(10, 17, 36, 0.55);
+  border: 1px solid rgba(255, 179, 92, 0.35);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.logic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.logic-table th,
+.logic-table td {
+  border: 1px solid rgba(255, 179, 92, 0.4);
+  padding: 8px;
+  text-align: center;
+}
+
+/* отметки */
+.mark-cell {
+  cursor: pointer;
+  height: 32px;
+}
+
+.mark-cell.red {
+  background: rgba(255, 80, 80, 0.6);
+}
+
+.mark-cell.blue {
+  background: rgba(80, 160, 255, 0.6);
+}
+
+/* текстовые ячейки */
+.text-table td[contenteditable="true"] {
+  background: rgba(255, 255, 255, 0.1);
+}

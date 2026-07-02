@@ -161,104 +161,150 @@
 
 <table class="logic-table marks-table">
 
-  <thead>
-    <tr>
-      <th rowspan="2" class="vertical">Имя</th>
-      <th rowspan="2">
-        <!-- 5 строк имён -->
-        <table class="inner-names">
-          <tr><td>Грин</td></tr>
-          <tr><td>Уайт</td></tr>
-          <tr><td>Пинк</td></tr>
-          <tr><td>Голди</td></tr>
-          <tr><td>Минт</td></tr>
-        </table>
-      </th>
+  <!-- ====== ШАПКА ====== -->
+  <tr>
+    <!-- пустая ячейка 2×2 -->
+    <td rowspan="2" colspan="2"></td>
 
-      <th colspan="5" class="vertical">Место работы</th>
-      <th colspan="5" class="vertical">Причина</th>
-      <th colspan="5" class="vertical">Опоздание</th>
-    </tr>
+    <!-- три большие категории -->
+    <th colspan="5" class="vertical">Место</th>
+    <th colspan="5" class="vertical">Причина</th>
+    <th colspan="5" class="vertical">Опоздание</th>
+  </tr>
 
-    <tr>
-      <!-- Место работы -->
-      <th class="vertical">Библиотека</th>
-      <th class="vertical">Офис</th>
-      <th class="vertical">Школа</th>
-      <th class="vertical">Магазин</th>
-      <th class="vertical">Театр</th>
+  <tr>
+    <!-- Место -->
+    <th class="vertical">Библиотека</th>
+    <th class="vertical">Офис</th>
+    <th class="vertical">Школа</th>
+    <th class="vertical">Магазин</th>
+    <th class="vertical">Театр</th>
 
-      <!-- Причина -->
-      <th class="vertical">Будильник</th>
-      <th class="vertical">Гололёд</th>
-      <th class="vertical">Упавшее дерево</th>
-      <th class="vertical">Град</th>
-      <th class="vertical">Ураган</th>
+    <!-- Причина -->
+    <th class="vertical">Будильник</th>
+    <th class="vertical">Гололёд</th>
+    <th class="vertical">Упавшее дерево</th>
+    <th class="vertical">Град</th>
+    <th class="vertical">Ураган</th>
 
-      <!-- Опоздание -->
-      <th class="vertical">20</th>
-      <th class="vertical">30</th>
-      <th class="vertical">40</th>
-      <th class="vertical">50</th>
-      <th class="vertical">60</th>
-    </tr>
-  </thead>
+    <!-- Опоздание -->
+    <th class="vertical">20</th>
+    <th class="vertical">30</th>
+    <th class="vertical">40</th>
+    <th class="vertical">50</th>
+    <th class="vertical">60</th>
+  </tr>
 
-  <tbody>
+  <!-- ====== БЛОК ИМЁН ====== -->
+  <tr>
+    <td rowspan="5" class="vertical">Имя</td>
+    <td>Грин</td>
 
-    <!-- 5 строк данных -->
-    <tr>
-      <td class="vertical">Имя</td>
-      <td>Грин</td>
+    <!-- Место -->
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
 
-      <!-- Место работы -->
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <!-- Причина -->
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
 
-      <!-- Причина -->
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <!-- Опоздание -->
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-      <!-- Опоздание -->
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-    </tr>
+  <tr>
+    <td>Уайт</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-    <tr>
-      <td class="vertical">Имя</td>
-      <td>Уайт</td>
+  <tr>
+    <td>Пинк</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-    </tr>
+  <tr>
+    <td>Голди</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-    <tr>
-      <td class="vertical">Имя</td>
-      <td>Пинк</td>
+  <tr>
+    <td>Минт</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-    </tr>
+  <!-- ====== БЛОК ОПОЗДАНИЯ ====== -->
+  <tr>
+    <td rowspan="5" class="vertical">Опоздание</td>
+    <td>20 минут</td>
 
-    <tr>
-      <td class="vertical">Имя</td>
-      <td>Голди</td>
+    <!-- Место -->
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
 
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-    </tr>
+    <!-- Причина -->
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-    <tr>
-      <td class="vertical">Имя</td>
-      <td>Минт</td>
+  <tr>
+    <td>30 минут</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-      <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
-    </tr>
+  <tr>
+    <td>40 минут</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
 
-  </tbody>
+  <tr>
+    <td>50 минут</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
+  <tr>
+    <td>60 минут</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
+  <!-- ====== БЛОК ПРИЧИН ====== -->
+  <tr>
+    <td rowspan="5" class="vertical">Причина</td>
+    <td>Будильник</td>
+
+    <!-- Место -->
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
+  <tr>
+    <td>Гололёд</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
+  <tr>
+    <td>Упавшее дерево</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
+  <tr>
+    <td>Град</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
+  <tr>
+    <td>Ураган</td>
+    <td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td><td class="mark-cell"></td>
+  </tr>
+
 </table>
+
 
 
 

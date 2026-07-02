@@ -72,6 +72,14 @@ body.theme-magazine {
   color: #fff;
 }
 
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.open {
+  display: flex;
+}
+
 
 .mag-header {
   background: rgba(255, 255, 255, 0.7);

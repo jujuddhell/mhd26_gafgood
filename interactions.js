@@ -232,11 +232,11 @@ if (dropdownBtn && dropdownMenu) {
     dropdownMenu.classList.toggle("open");
   });
 
-  // закрытие при клике вне меню
   document.addEventListener("click", () => {
     dropdownMenu.classList.remove("open");
   });
 }
+
 
 
 document.querySelectorAll('.subnav button').forEach(btn => {

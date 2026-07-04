@@ -812,44 +812,62 @@
 
 /* === MEMORY-3 FIXED CSS === */
 
+/* === MEMORY-3 — рабочий CSS === */
+
+.memory3-board {
+  width: 700px;
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+/* Карточка */
 .memory3-card {
   width: 100px;
   height: 140px;
   perspective: 800px;
   cursor: pointer;
-  position: relative !important;
+  position: relative;
 }
 
+/* Внутренний блок */
 .card-inner {
   width: 100%;
   height: 100%;
-  position: absolute !important;
+  position: relative;
   transform-style: preserve-3d;
   transition: transform 0.45s ease;
-  transform: rotateY(0deg) !important;
+  transform: rotateY(0deg);
 }
 
+/* Переворот */
 .memory3-card.open .card-inner,
 .memory3-card.matched .card-inner {
-  transform: rotateY(180deg) !important;
+  transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
-  position: absolute !important;
+/* Стороны */
+.card-front,
+.card-back {
+  position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden !important;
+  backface-visibility: hidden;
 }
 
+/* Лицевая сторона */
 .card-front {
-  transform: rotateY(180deg) !important;
+  transform: rotateY(180deg);
 }
 
+/* Рубашка */
 .card-back {
-  transform: rotateY(0deg) !important;
+  transform: rotateY(0deg);
 }
 
-.card-back img, .card-front img {
+.card-front img,
+.card-back img {
   width: 100%;
   height: 100%;
   object-fit: cover;

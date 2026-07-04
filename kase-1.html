@@ -47,6 +47,7 @@
   <nav class="subnav">
   <button data-target="#puzzlesSection">Рассмотреть улики</button>
   <button data-target="#alibiSection">Изучить алиби</button>
+  <button data-target="#memorySection">Раскрыть дело</button>
 </nav>
 
 <section id="puzzlesSection" class="puzzles-block hidden">
@@ -360,6 +361,38 @@
 
 </section><!-- конец alibiSection -->
 
+<section id="memorySection" class="alibi-block hidden"></section>
+
+<section class="puzzle-section">
+  <h2 class="section-title">Раскрой это дело!</h2>
+
+  <div class="principles" style="max-width: 900px; margin: 0 auto;">
+    <p>
+      Открой три карточки подряд (порядок не важен): <strong>портрет → имя → деятельность</strong>.
+      Если комбинация верная — тройка остаётся открытой.
+      Если нет — карточки перевернутся обратно.
+    </p>
+
+    <button id="memory3-reset" class="answer-button">
+      Перемешать карточки
+    </button>
+
+    <div id="memory3-board" class="memory3-board"></div>
+  </div>
+</section>
+
+
+
+<div id="memory3-win" class="memory3-win hidden">
+  <div class="memory3-win-content">
+    <h2>Поздравляем!</h2>
+    <p>Вы собрали все комбинации!</p>
+    <button id="memory3-win-close">Закрыть</button>
+  </div>
+</div>
+
+</section>
+
 
 </section>
 
@@ -370,5 +403,6 @@
   </footer>
 
   <script src="interactions.js"></script>
+  <script src="memory.js"></script>
 </body>
 </html>

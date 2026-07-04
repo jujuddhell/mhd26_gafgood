@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     board.innerHTML = "";
 
     let cards = [];
-
     sets.forEach(set => {
       cards.push({ type: "character", img: set.characterImg, setId: set.id });
       cards.push({ type: "color", img: set.colorImg, setId: set.id });
@@ -55,12 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cards = cards.sort(() => Math.random() - 0.5);
 
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       const el = document.createElement("div");
       el.className = "memory3-card";
       el.dataset.type = card.type;
       el.dataset.setId = card.setId;
-      el.dataset.index = index;
 
       el.innerHTML = `
         <div class="card-inner">
@@ -79,54 +77,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   generateCards();
 
-  let opened = [];
+  board.addEventListener("click", (e) => {
+    const card = e.target.closest(".memory3-card");
+    if (!card) return;
 
+    // уже собрана — не трогаем
+    if (card.classList.contains("matched")) return;
 
- board.addEventListener("click", (e) => {
-  // всегда ищем карточку, даже если клик по img
-  const card = e.target.closest(".memory3-card");
-  if (!card) return;
+    // уже открыта — не даём открыть повторно
+    if (card.classList.contains("open")) return;
 
-  // если уже открыта или собрана — игнорируем
-  if (card.classList.contains("open") || card.classList.contains("matched")) return;
+    // открываем карточку
+    card.classList.add("open");
 
-  // открыть карточку
-  card.classList.add("open");
-  opened.push(card);
+    // смотрим, сколько открытых карточек сейчас есть
+    const openedCards = Array.from(
+      board.querySelectorAll(".memory3-card.open:not(.matched)")
+    );
 
-  // ждём три карточки
-  if (opened.length === 3) {
-    const [c1, c2, c3] = opened;
+    if (openedCards.length === 3) {
+      const [c1, c2, c3] = openedCards;
 
-    const sameSet =
-      c1.dataset.setId === c2.dataset.setId &&
-      c2.dataset.setId === c3.dataset.setId;
+      const sameSet =
+        c1.dataset.setId === c2.dataset.setId &&
+        c2.dataset.setId === c3.dataset.setId;
 
-    const types = [c1.dataset.type, c2.dataset.type, c3.dataset.type];
-    const hasCharacter = types.includes("character");
-    const hasColor = types.includes("color");
-    const hasActivity = types.includes("activity");
+      const types = [c1.dataset.type, c2.dataset.type, c3.dataset.type];
+      const hasCharacter = types.includes("character");
+      const hasColor = types.includes("color");
+      const hasActivity = types.includes("activity");
 
-    const correct = sameSet && hasCharacter && hasColor && hasActivity;
+      const correct = sameSet && hasCharacter && hasColor && hasActivity;
 
-    if (correct) {
-      // правильная тройка — остаются открытыми
-      opened.forEach(c => c.classList.add("matched"));
-    } else {
-      // неправильная — переворачиваем обратно
-      setTimeout(() => {
-        opened.forEach(c => {
+      if (correct) {
+        openedCards.forEach(c => {
           c.classList.remove("open");
+          c.classList.add("matched");
         });
-      }, 600);
+      } else {
+        setTimeout(() => {
+          openedCards.forEach(c => c.classList.remove("open"));
+        }, 600);
+      }
     }
-
-    opened = [];
-  }
- });
+  });
 
   resetBtn.addEventListener("click", () => {
     generateCards();
-    opened = [];
   });
 });
+

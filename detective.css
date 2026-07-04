@@ -810,7 +810,6 @@
 
 /*МЕМОРИ*/
 
-/* === Мемори-3 — сетка === */
 .memory3-board {
   width: 700px;
   margin: 25px auto;
@@ -825,15 +824,17 @@
   height: 140px;
   perspective: 800px;
   cursor: pointer;
+  position: relative; /* важно! */
 }
 
 /* Внутренний переворот */
 .card-inner {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 0.45s ease;
+  transform: rotateY(0deg); /* базовое состояние */
 }
 
 .memory3-card.open .card-inner,

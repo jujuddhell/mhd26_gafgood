@@ -81,36 +81,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let opened = [];
 
-  board.addEventListener("click", (e) => {
-    const card = e.target.closest(".memory3-card");
-    if (!card) return;
+board.addEventListener("click", (e) => {
+  const card = e.target.closest(".memory3-card");
+  if (!card) return;
 
-    if (card.classList.contains("open") || card.classList.contains("matched")) return;
+  // уже открыта или собрана — игнорируем
+  if (card.classList.contains("open") || card.classList.contains("matched")) return;
 
-    card.classList.add("open");
-    opened.push(card);
+  card.classList.add("open");
+  opened.push(card);
 
-    if (opened.length === 3) {
-      const [c1, c2, c3] = opened;
+  // ждём три карточки
+  if (opened.length === 3) {
+    const [c1, c2, c3] = opened;
 
-      const correct =
-        c1.dataset.type === "character" &&
-        c2.dataset.type === "color" &&
-        c3.dataset.type === "activity" &&
-        c1.dataset.setId === c2.dataset.setId &&
-        c2.dataset.setId === c3.dataset.setId;
+    const sameSet =
+      c1.dataset.setId === c2.dataset.setId &&
+      c2.dataset.setId === c3.dataset.setId;
 
-      if (correct) {
-        opened.forEach(c => c.classList.add("matched"));
-      } else {
-        setTimeout(() => {
-          opened.forEach(c => c.classList.remove("open"));
-        }, 700);
-      }
+    const types = [c1.dataset.type, c2.dataset.type, c3.dataset.type];
+    const hasCharacter = types.includes("character");
+    const hasColor = types.includes("color");
+    const hasActivity = types.includes("activity");
 
-      opened = [];
+    const correct = sameSet && hasCharacter && hasColor && hasActivity;
+
+    if (correct) {
+      // правильная тройка — оставляем открытыми
+      opened.forEach(c => c.classList.add("matched"));
+    } else {
+      // неправильная — переворачиваем обратно
+      setTimeout(() => {
+        opened.forEach(c => c.classList.remove("open"));
+      }, 700);
     }
-  });
+
+    // очищаем массив
+    opened = [];
+  }
+});
+
 
   resetBtn.addEventListener("click", () => {
     generateCards();

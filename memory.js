@@ -125,6 +125,18 @@ document.addEventListener("DOMContentLoaded", () => {
   resetBtn.addEventListener("click", () => {
     generateCards();
   });
+
+  function checkWin() {
+  const matched = board.querySelectorAll(".memory3-card.matched");
+  if (matched.length === sets.length * 3) {
+    document.getElementById("memory3-win").classList.remove("hidden");
+  }
+}
+
+document.getElementById("memory3-win-close").addEventListener("click", () => {
+  document.getElementById("memory3-win").classList.add("hidden");
+});
+
 });
 
 

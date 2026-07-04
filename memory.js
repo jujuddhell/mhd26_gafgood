@@ -81,13 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let opened = [];
 
-board.addEventListener("click", (e) => {
+
+ board.addEventListener("click", (e) => {
+  // всегда ищем карточку, даже если клик по img
   const card = e.target.closest(".memory3-card");
   if (!card) return;
 
-  // уже открыта или собрана — игнорируем
+  // если уже открыта или собрана — игнорируем
   if (card.classList.contains("open") || card.classList.contains("matched")) return;
 
+  // открыть карточку
   card.classList.add("open");
   opened.push(card);
 
@@ -107,20 +110,20 @@ board.addEventListener("click", (e) => {
     const correct = sameSet && hasCharacter && hasColor && hasActivity;
 
     if (correct) {
-      // правильная тройка — оставляем открытыми
+      // правильная тройка — остаются открытыми
       opened.forEach(c => c.classList.add("matched"));
     } else {
       // неправильная — переворачиваем обратно
       setTimeout(() => {
-        opened.forEach(c => c.classList.remove("open"));
-      }, 700);
+        opened.forEach(c => {
+          c.classList.remove("open");
+        });
+      }, 600);
     }
 
-    // очищаем массив
     opened = [];
   }
-});
-
+ });
 
   resetBtn.addEventListener("click", () => {
     generateCards();
